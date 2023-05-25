@@ -30,5 +30,7 @@ namespace TiendaP.View
             InitializeComponent();
 
         }
+
+        
     }
 }

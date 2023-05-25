@@ -7,6 +7,44 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="50"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Nombre" TextAlignment="Right" Foreground="White"  Margin="5" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Tipo" TextAlignment="Right" Foreground="White"  Margin="5" />
+        <TextBlock Grid.Row="3" Grid.Column="1" Text="Talla" TextAlignment="Right" Foreground="White"  Margin="5" />
+        <TextBlock Grid.Row="4" Grid.Column="1" Text="Url Imagen" TextAlignment="Right" Foreground="White"  Margin="5" />
+        <TextBlock Grid.Row="5" Grid.Column="1" Text="Precio" TextAlignment="Right" Foreground="White"  Margin="5"/>
+
+        
+        <TextBox x:Name="txtNombre"  Grid.Row="1" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtTipo"  Grid.Row="2" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtTalla"  Grid.Row="3" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtImagenUrl"  Grid.Row="4" Grid.Column="2" Margin="5"/>
+        <TextBox x:Name="txtPrecio"  Grid.Row="5" Grid.Column="2" Margin="5"/>
+        <TextBlock x:Name="DatosGuardados" Grid.Row="6" Grid.Column="2" Text="" Foreground="Red" TextAlignment="Center" Margin="10"
+                   />
+        <Button x:Name="btnGuardar"
+                Grid.Row="7"
+                Grid.Column="3"
+                Margin="10,5,60,5" 
+                Content="Guardar"
+                TextBlock.FontSize="18"
+                TextBlock.FontWeight="Medium"
+                Click="btnGuardar_Click"
+                />
     </Grid>
 </UserControl>

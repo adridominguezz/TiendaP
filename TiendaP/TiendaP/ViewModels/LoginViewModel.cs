@@ -92,6 +92,7 @@ namespace TiendaP.ViewModels
             userRepository = new UserRepository();
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassCommand("", ""));
+            
         }
 
         private bool CanExecuteLoginCommand(object obj)
@@ -119,6 +120,7 @@ namespace TiendaP.ViewModels
                 ErrorMessage = "* Invalid username or password";
             }
         }
+
 
         private void ExecuteRecoverPassCommand(string username, string email)
         {

@@ -91,6 +91,29 @@ namespace TiendaP.ViewModels
             LoadCurrentUserData();
         }
 
+        public bool IsAdmin
+        {
+            get
+            {
+                // Get the current user from the repository.
+                var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+
+                // Check if the user is an admin.
+                if (user != null && user.Tipo == "admin")
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            set
+            {
+
+            }
+        }
+
+
+
         private void ExecuteShowContactoViewCommand(object obj)
         {
             CurrentChildView = new ContactoViewModel();

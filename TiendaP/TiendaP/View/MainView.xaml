@@ -88,14 +88,7 @@
                         <TextBlock Text="CESTA" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
-                <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource color3}"
-                             Command="{Binding ShowCuentaViewCommand}">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="UserAlt" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="CUENTA" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-                </RadioButton>
+                
                 <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
                              Command="{Binding ShowFAQViewCommand}">
@@ -110,6 +103,14 @@
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="EnvelopesBulk" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="CONTACTO" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton x:Name="btnProductos" IsChecked="{Binding IsAdmin}" Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color3}"
+                             Command="{Binding ShowCuentaViewCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ShopLock" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="PRODUCTOS" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
 

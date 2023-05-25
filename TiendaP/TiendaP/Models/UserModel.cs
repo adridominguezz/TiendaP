@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using TiendaP.Repositories;
 
 namespace TiendaP.Models
 {
@@ -17,6 +19,6 @@ namespace TiendaP.Models
         public string Email { get; set; }
         public string Tipo { get; set; }
 
-       
+
     }
 }

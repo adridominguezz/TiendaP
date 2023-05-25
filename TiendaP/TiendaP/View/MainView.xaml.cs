@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
+using System.Threading;
+using TiendaP.Repositories;
+using TiendaP.Models;
 //using System.Runtime.Interop;
 
 namespace TiendaP.View
@@ -22,9 +25,12 @@ namespace TiendaP.View
     /// </summary>
     public partial class MainView : Window
     {
+
         public MainView()
         {
             InitializeComponent();
+
+         
 
         }
         [DllImport("user32.dll")]
