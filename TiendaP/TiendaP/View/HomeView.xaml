@@ -22,9 +22,10 @@
                     <CheckBox IsChecked="False" Content="Shoes"/>
                     <CheckBox IsChecked="False" Content="Shovels"/>
                 </StackPanel>
-                <ListView x:Name="listView" Loaded="ListView_Loaded" ItemsSource="{Binding Products}" Grid.Row="1"
+                <ListView x:Name="listView" ItemsSource="{Binding Products}" Grid.Row="1"
                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                        ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <!--Loaded="ListView_Loaded"-->
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -37,7 +38,7 @@
                                     <TextBlock Text="{Binding Nombre}"/>
                                     <TextBlock Text="{Binding Talla}"/>
                                     <TextBlock Text="{Binding Precio}"/>
-                                    <Button Content="Add to Cart" Click="AddToCart"/>
+                                    <Button Content="Add to Cart"  /> <!--Click="AddToCart"-->
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>
