@@ -30,8 +30,27 @@ namespace TiendaP.View
         {
             InitializeComponent();
 
-            // Set the DataContext to an instance of HomeViewModel
-            DataContext = new HomeViewModel();
+        }
+
+        public Product Product { get; set; }
+        public string ImagenUrl { get; set; } 
+        public string Nombre { set; get; }
+        public string Talla { set; get; } 
+        public float Precio { set; get; }
+
+        private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Product> Lista = new List<Product>();
+
+            Lista=IProductRepository.ObtenerProductos();
+
+            foreach (Product p in Lista) {
+                Product = p;
+                ImagenUrl = p.ImagenURl;
+                Nombre = p.Nombre;
+                Talla = p.Talla;
+                Precio = p.Precio;
+            }
         }
     }
 }

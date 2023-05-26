@@ -11,8 +11,6 @@
 
     <Grid>
 
-
-
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
@@ -26,7 +24,7 @@
             </StackPanel>
 
             <!-- Mostrar los productos -->
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding Products}">
+            <ItemsControl Grid.Row="1" ItemsSource="{Binding Products}" Loaded="ItemsControl_Loaded">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Margin="10">
