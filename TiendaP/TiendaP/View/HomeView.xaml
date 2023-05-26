@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TiendaP.View"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI"
+             xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI" 
+             xmlns:viewmodels="clr-namespace:TiendaP.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800">
 
@@ -24,14 +25,14 @@
             </StackPanel>
 
             <!-- Mostrar los productos -->
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding Products}" Loaded="ItemsControl_Loaded">
+            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Margin="10">
-                            <Image Source="{Binding ImagenURl}" Width="50" Height="50" Margin="0,0,10,0"/>
-                            <TextBlock Text="{Binding Nombre}" Margin="0,0,10,0"/>
-                            <TextBlock Text="{Binding Talla}" Margin="0,0,10,0"/>
-                            <TextBlock Text="{Binding Precio}" Margin="0,0,10,0"/>
+                            <Image Name="imagenValue" Width="50" Height="50" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="NombreValue" Text="{Binding Nombre}" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="TallaValue" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="PrecioValue" Margin="0,0,10,0"/>
                             <Button Content="Add to Cart"/>
                         </StackPanel>
                     </DataTemplate>

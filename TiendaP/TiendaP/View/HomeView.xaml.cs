@@ -30,6 +30,39 @@ namespace TiendaP.View
         {
             InitializeComponent();
 
+            Binding Producto = new Binding();
+            Binding Img = new Binding();
+            Binding Nombre = new Binding();
+            Binding Talla = new Binding();
+            Binding Precio= new Binding();
+
+
+
+            List<Product> Lista = new List<Product>();
+
+            Lista = IProductRepository.ObtenerProductos();
+
+
+            //Producto.Source = Lista[0];
+            //Img.Source = Lista[0].ImagenURl;
+            Nombre.Source = "HOLA"; //Lista[0].Nombre;
+            //Talla.Source = Lista[0].Talla;
+            //Precio.Source = Lista[0].Precio;
+
+            //TallaValue.SetBinding(TextBlock.TextProperty, Talla);
+            //imagenValue.SetBinding(Image.SourceProperty, Img);
+            
+
+            //foreach (Product p in Lista)
+            //{
+            //    Producto.Source = p;
+            //    Img.Source = p.ImagenURl;
+            //    Nombre.Source = p.Nombre;
+            //    Talla.Source = p.Talla;
+            //    Precio.Source = p.Precio;
+            //}
+
+
         }
 
         public Product Product { get; set; }
@@ -40,17 +73,9 @@ namespace TiendaP.View
 
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Product> Lista = new List<Product>();
+            
 
-            Lista=IProductRepository.ObtenerProductos();
 
-            foreach (Product p in Lista) {
-                Product = p;
-                ImagenUrl = p.ImagenURl;
-                Nombre = p.Nombre;
-                Talla = p.Talla;
-                Precio = p.Precio;
-            }
         }
     }
 }
