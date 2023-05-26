@@ -21,5 +21,49 @@ namespace TiendaP.Models
             }
             return retorno;
         }
+
+        public static List<Product> ObtenerProductos()
+        {
+            List<Product> Lista = new List<Product>();
+
+            using (SqlConnection conexion = ProductRepository.ObtenerConexion())
+            {
+                SqlCommand comando = new SqlCommand("SELECT Nombre, Tipo, Talla, ImagenUrl, Precio FROM Products", conexion);
+                SqlDataReader reader = null;
+
+                try
+                {
+                    conexion.Open();
+                    reader = comando.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Nombre = reader.GetString(0);
+                        product.Tipo = reader.GetString(1);
+                        product.Talla = reader.GetString(2);
+                        product.ImagenURl = reader.GetString(3);
+                        product.Precio = reader.GetFloat(4);
+
+                        Lista.Add(product);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejar la excepción adecuadamente
+                    Console.WriteLine("Error al obtener los productos: " + ex.Message);
+                }
+                finally
+                {
+                    if (reader != null)
+                        reader.Close();
+
+                    conexion.Close();
+                }
+
+                return Lista;
+            }
+
+        }
     }
 }

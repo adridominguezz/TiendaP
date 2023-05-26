@@ -16,6 +16,7 @@ using TiendaP.Models;
 using TiendaP.Repositories;
 using System.Data.SqlClient;
 using System.Collections.ObjectModel;
+using TiendaP.ViewModels;
 
 namespace TiendaP.View
 {
@@ -29,8 +30,8 @@ namespace TiendaP.View
         {
             InitializeComponent();
 
+            // Set the DataContext to an instance of HomeViewModel
+            DataContext = new HomeViewModel();
         }
-
-        
     }
 }
