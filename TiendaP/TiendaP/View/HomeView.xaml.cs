@@ -20,16 +20,16 @@ using TiendaP.ViewModels;
 
 namespace TiendaP.View
 {
-    /// <summary>
-    /// Lógica de interacción para HomeView.xaml
-    /// </summary>
+  
     public partial class HomeView : UserControl
     {
 
         public List<Product> lista = new List<Product>();
         public HomeView()
-        {
+        { 
             InitializeComponent();
+
+
 
             Binding Producto = new Binding();
             Binding Img = new Binding();
@@ -38,34 +38,11 @@ namespace TiendaP.View
             Binding Precio = new Binding();
 
 
-            ////Obtengo los productos de la tabla
-            //List<Product> Lista = new List<Product>();
 
             lista = IProductRepository.ObtenerProductos();
 
 
             DataContext = this;
-
-
-            //Producto.Source = lista[0];
-            //Img.Source = lista[0].ImagenURl;
-            //Nombre.Source = lista[0].Nombre;
-            //Talla.Source = lista[0].Talla;
-            //Precio.Source = lista[0].Precio;
-
-            //TallaValue.SetBinding(TextBlock.TextProperty, Talla);
-            //imagenValue.SetBinding(Image.SourceProperty, Img);
-
-
-            //foreach (Product p in Lista)
-            //{
-            //    Producto.Source = p;
-            //    Img.Source = p.ImagenURl;
-            //    Nombre.Source = p.Nombre;
-            //    Talla.Source = p.Talla;
-            //    Precio.Source = p.Precio;
-            //}
-
 
         }
 

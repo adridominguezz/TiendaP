@@ -71,6 +71,8 @@ namespace TiendaP.Repositories
                         };
                     }
                 }
+
+                connection.Close();
             }
             return user;
         }

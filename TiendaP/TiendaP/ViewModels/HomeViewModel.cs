@@ -4,32 +4,33 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using TiendaP.Models;
 
 namespace TiendaP.ViewModels
 {
+
     public class HomeViewModel : ViewModelBase
     {
-        //private List<Product> products;
-
-        //public List<Product> Products
-        //{
-        //    get { return products; }
-        //    set
-        //    {
-        //        if (products != value)
-        //        {
-        //            products = value;
-        //            OnPropertyChanged(nameof(Products));
-        //        }
-        //    }
-        //}
-
+        
+        public List<Product> lista = new List<Product>();
+        public Product Product { get; set; }
+        public string ImagenUrl { get; set; }
+        public string Nombre { set; get; }
+        public string Talla { set; get; }
+        public float Precio { set; get; }
         public HomeViewModel()
         {
-            //    // Get products from the repository and assign them to the Products property
-            //    Products = IProductRepository.ObtenerProductos();
-            //}
+            lista = IProductRepository.ObtenerProductos();
+
+            Console.WriteLine(lista[1].Nombre);
+
+            Binding Producto = new Binding();
+            Binding Img = new Binding();
+            Binding Nombre = new Binding();
+            Binding Talla = new Binding();
+            Binding Precio = new Binding();
+
         }
     }
 }

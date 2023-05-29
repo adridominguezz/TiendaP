@@ -6,9 +6,12 @@
              xmlns:local="clr-namespace:TiendaP.View"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:adonisExtensions="clr-namespace:AdonisUI.Extensions;assembly=AdonisUI" 
-             xmlns:viewmodels="clr-namespace:TiendaP.ViewModels"
+             xmlns:viewmodels="clr-namespace:TiendaP.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    
 
     <Grid>
 
@@ -16,6 +19,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
                 <TextBlock Text="Product Filter" Margin="0,0,20,0"/>
@@ -24,15 +28,28 @@
                 <CheckBox IsChecked="False" Content="Shovels"/>
             </StackPanel>
 
-            <!-- Mostrar los productos -->
-            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded" Grid.ColumnSpan="3">
+
+
+
+            <StackPanel Orientation="Horizontal" Margin="10"
+                        Grid.Row="2">
+                <Image Name="imagenValue" Source="{Binding lista[0].ImagenURl}" Width="50" Height="50" Margin="0,0,10,0"/>
+                <TextBlock Text="{Binding lista[1].Nombre}" Width="50" Background="Aqua" ></TextBlock>
+                <TextBlock x:Name="NombreValue" Text="{Binding lista[0].Nombre}" Margin="0,0,10,0"/>
+                <TextBlock x:Name="TallaValue" Text="{Binding lista[0].Talla}" Margin="0,0,10,0"/>
+                <TextBlock x:Name="PrecioValue" Text="{Binding lista[0].Precio}" Margin="0,0,10,0"/>
+                <Button Content="Add to Cart"/>
+            </StackPanel>
+
+
+            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded" ItemsSource="{Binding lista}" Grid.ColumnSpan="3">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Margin="10">
-                            <Image Name="imagenValue" Source="{Binding Lista[0].Img}" Width="50" Height="50" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="NombreValue" Text="{Binding Lista[0].Nombre}" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="TallaValue" Text="{Binding Lista[0].Talla}" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="PrecioValue" Text="{Binding Lista[0].Precio}" Margin="0,0,10,0"/>
+                            <Image Name="imagenValue" Source="{Binding ImagenURl}" Width="50" Height="50" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="NombreValue" Text="{Binding Nombre}" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="TallaValue" Text="{Binding Talla}" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="PrecioValue" Text="{Binding Precio}" Margin="0,0,10,0"/>
                             <Button Content="Add to Cart"/>
                         </StackPanel>
                     </DataTemplate>
