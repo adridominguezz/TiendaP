@@ -25,14 +25,14 @@
             </StackPanel>
 
             <!-- Mostrar los productos -->
-            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded">
+            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded" Grid.ColumnSpan="3">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Margin="10">
-                            <Image Name="imagenValue" Width="50" Height="50" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="NombreValue" Text="{Binding Nombre}" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="TallaValue" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="PrecioValue" Margin="0,0,10,0"/>
+                            <Image Name="imagenValue" Source="{Binding Lista[0].Img}" Width="50" Height="50" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="NombreValue" Text="{Binding Lista[0].Nombre}" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="TallaValue" Text="{Binding Lista[0].Talla}" Margin="0,0,10,0"/>
+                            <TextBlock x:Name="PrecioValue" Text="{Binding Lista[0].Precio}" Margin="0,0,10,0"/>
                             <Button Content="Add to Cart"/>
                         </StackPanel>
                     </DataTemplate>

@@ -26,6 +26,7 @@ namespace TiendaP.View
     public partial class HomeView : UserControl
     {
 
+        public List<Product> lista = new List<Product>();
         public HomeView()
         {
             InitializeComponent();
@@ -34,24 +35,27 @@ namespace TiendaP.View
             Binding Img = new Binding();
             Binding Nombre = new Binding();
             Binding Talla = new Binding();
-            Binding Precio= new Binding();
+            Binding Precio = new Binding();
 
 
+            ////Obtengo los productos de la tabla
+            //List<Product> Lista = new List<Product>();
 
-            List<Product> Lista = new List<Product>();
-
-            Lista = IProductRepository.ObtenerProductos();
+            lista = IProductRepository.ObtenerProductos();
 
 
-            //Producto.Source = Lista[0];
-            //Img.Source = Lista[0].ImagenURl;
-            Nombre.Source = "HOLA"; //Lista[0].Nombre;
-            //Talla.Source = Lista[0].Talla;
-            //Precio.Source = Lista[0].Precio;
+            DataContext = this;
+
+
+            Producto.Source = lista[0];
+            Img.Source = lista[0].ImagenURl;
+            Nombre.Source = lista[0].Nombre;
+            Talla.Source = lista[0].Talla;
+            Precio.Source = lista[0].Precio;
 
             //TallaValue.SetBinding(TextBlock.TextProperty, Talla);
             //imagenValue.SetBinding(Image.SourceProperty, Img);
-            
+
 
             //foreach (Product p in Lista)
             //{
