@@ -47,11 +47,11 @@ namespace TiendaP.View
             DataContext = this;
 
 
-            Producto.Source = lista[0];
-            Img.Source = lista[0].ImagenURl;
-            Nombre.Source = lista[0].Nombre;
-            Talla.Source = lista[0].Talla;
-            Precio.Source = lista[0].Precio;
+            //Producto.Source = lista[0];
+            //Img.Source = lista[0].ImagenURl;
+            //Nombre.Source = lista[0].Nombre;
+            //Talla.Source = lista[0].Talla;
+            //Precio.Source = lista[0].Precio;
 
             //TallaValue.SetBinding(TextBlock.TextProperty, Talla);
             //imagenValue.SetBinding(Image.SourceProperty, Img);
