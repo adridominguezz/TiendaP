@@ -40,7 +40,7 @@ namespace TiendaP.View
 
 
             lista = IProductRepository.ObtenerProductos();
-
+            ProductosLista.ItemsSource = lista;
 
             DataContext = this;
 

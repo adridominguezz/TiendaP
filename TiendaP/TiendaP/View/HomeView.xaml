@@ -18,7 +18,6 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
@@ -30,27 +29,58 @@
 
 
 
+            <ItemsControl Grid.Row="1" Name="ProductosLista" Loaded="ItemsControl_Loaded" ItemsSource="{Binding lista}" Grid.ColumnSpan="3">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.Resources>
+                    <!-- Estilo para el contenedor StackPanel -->
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Orientation" Value="Horizontal"/>
+                        <Setter Property="Margin" Value="1"/>
+                    </Style>
 
-            <StackPanel Orientation="Horizontal" Margin="10"
-                        Grid.Row="2">
-                <Image Name="imagenValue" Source="{Binding lista[0].ImagenURl}" Width="50" Height="50" Margin="0,0,10,0"/>
-                <TextBlock Text="{Binding lista[1].Nombre}" Width="50" Background="Aqua" ></TextBlock>
-                <TextBlock x:Name="NombreValue" Text="{Binding lista[0].Nombre}" Margin="0,0,10,0"/>
-                <TextBlock x:Name="TallaValue" Text="{Binding lista[0].Talla}" Margin="0,0,10,0"/>
-                <TextBlock x:Name="PrecioValue" Text="{Binding lista[0].Precio}" Margin="0,0,10,0"/>
-                <Button Content="Add to Cart"/>
-            </StackPanel>
+                    <!-- Estilo para el botón Add to Cart -->
+                    <Style TargetType="Button" x:Key="AddToCartButtonStyle">
+                        <Setter Property="Content" Value="Add to Cart"/>
+                        <Setter Property="Background" Value="#1E88E5"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="MinWidth" Value="100"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1565C0"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#0D47A1"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ItemsControl.Resources>
 
-
-            <ItemsControl Grid.Row="1" Loaded="ItemsControl_Loaded" ItemsSource="{Binding lista}" Grid.ColumnSpan="3">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="10">
-                            <Image Name="imagenValue" Source="{Binding ImagenURl}" Width="50" Height="50" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="NombreValue" Text="{Binding Nombre}" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="TallaValue" Text="{Binding Talla}" Margin="0,0,10,0"/>
-                            <TextBlock x:Name="PrecioValue" Text="{Binding Precio}" Margin="0,0,10,0"/>
-                            <Button Content="Add to Cart"/>
+                        <StackPanel>
+                            <!-- Estilos de TextBlock e Image omitidos para mayor claridad -->
+
+                            <StackPanel Orientation="Horizontal">
+                                <Image Name="imagenValue" Source="{Binding ImagenURl}" MaxWidth="100" MaxHeight="100"/>
+                                <StackPanel>
+                                    <TextBlock x:Name="NombreValue" Text="{Binding Nombre}"/>
+                                    <TextBlock x:Name="TallaValue" Text="{Binding Talla}" FontStyle="Italic"/>
+                                    <TextBlock x:Name="PrecioValue" Text="{Binding Precio}" FontWeight="Bold"/>
+                                </StackPanel>
+                                <Button Content="Add to Cart" Style="{StaticResource AddToCartButtonStyle}"/>
+                            </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

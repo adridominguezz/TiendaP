@@ -22,7 +22,6 @@ namespace TiendaP.ViewModels
         public HomeViewModel()
         {
             lista = IProductRepository.ObtenerProductos();
-
             Console.WriteLine(lista[1].Nombre);
 
             Binding Producto = new Binding();
