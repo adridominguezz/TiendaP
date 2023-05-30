@@ -35,37 +35,7 @@
                         <WrapPanel Orientation="Horizontal" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-                <ItemsControl.Resources>
-                    <!-- Estilo para el contenedor StackPanel -->
-                    <Style TargetType="StackPanel">
-                        <Setter Property="Orientation" Value="Horizontal"/>
-                        <Setter Property="Margin" Value="1"/>
-                    </Style>
-
-                    <!-- Estilo para el botón Add to Cart -->
-                    <Style TargetType="Button" x:Key="AddToCartButtonStyle">
-                        <Setter Property="Content" Value="Add to Cart"/>
-                        <Setter Property="Background" Value="#1E88E5"/>
-                        <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="Padding" Value="10,5"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="MinWidth" Value="100"/>
-                        <Setter Property="FontSize" Value="14"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="HorizontalAlignment" Value="Right"/>
-                        <Setter Property="VerticalAlignment" Value="Center"/>
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#1565C0"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#0D47A1"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </ItemsControl.Resources>
+                
 
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
@@ -73,13 +43,62 @@
                             <!-- Estilos de TextBlock e Image omitidos para mayor claridad -->
 
                             <StackPanel Orientation="Horizontal">
-                                <Image Name="imagenValue" Source="{Binding ImagenURl}" MaxWidth="100" MaxHeight="100"/>
-                                <StackPanel>
-                                    <TextBlock x:Name="NombreValue" Text="{Binding Nombre}"/>
-                                    <TextBlock x:Name="TallaValue" Text="{Binding Talla}" FontStyle="Italic"/>
-                                    <TextBlock x:Name="PrecioValue" Text="{Binding Precio}" FontWeight="Bold"/>
-                                </StackPanel>
-                                <Button Content="Add to Cart" Style="{StaticResource AddToCartButtonStyle}"/>
+                                <Border Width="300" 
+                                        Height="120"  
+                                        BorderThickness="1"
+                                        Background="White"
+                                        CornerRadius="10"
+                                        Margin="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Source="{Binding ImagenURl}" Width="100" Height="100" Margin="10"/>
+
+                                        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0,10,0">
+                                            <TextBlock Text="{Binding Nombre}" FontSize="16" Margin="5"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding Talla}" Margin="5" HorizontalAlignment="Left"/>
+                                                <TextBlock Text="{Binding Precio}" Foreground="Blue" FontWeight="Bold" Margin="55,10,5,5" HorizontalAlignment="Right"/>
+                                            </StackPanel>
+                                            <Button x:Name="btnAddCart"
+                                                    BorderThickness="0"
+                                                    Content="Añadir al carrito"                         
+                                                    Foreground="{StaticResource color5}"
+                                                    FontSize="14"
+                                                    FontWeight="Bold"
+                                                    FontFamily="Montserrat Thin"
+                                                    Cursor="Hand"                        
+                                                    Margin="0,0,0,0"
+                                                    >
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="Background" Value="{StaticResource color1}"/>
+                                                        <Style.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Background" Value="{StaticResource color8}"/>
+                                                            </Trigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Border Width="150" Height="30"
+                                                                CornerRadius="10"
+                                                                Background="{TemplateBinding Background}">      
+                                                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                                        </Border>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                               
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
