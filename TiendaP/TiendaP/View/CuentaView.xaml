@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Nombre" TextAlignment="Right" Foreground="White"  Margin="5" />
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="Tipo" TextAlignment="Right" Foreground="White"  Margin="5" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="Marca" TextAlignment="Right" Foreground="White"  Margin="5" />
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Talla" TextAlignment="Right" Foreground="White"  Margin="5" />
         <TextBlock Grid.Row="4" Grid.Column="1" Text="Url Imagen" TextAlignment="Right" Foreground="White"  Margin="5" />
         <TextBlock Grid.Row="5" Grid.Column="1" Text="Precio" TextAlignment="Right" Foreground="White"  Margin="5"/>

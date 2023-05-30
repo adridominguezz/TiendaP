@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,8 +52,10 @@ namespace TiendaP.Models
                     while (reader.Read())
                     {
                         Product product = new Product();
-                        product.Nombre = reader.GetString(0);
+                        product.Nombre = (reader.GetString(0)).ToUpper(); 
                         product.Tipo = reader.GetString(1);
+                        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+                        product.Tipo = textInfo.ToTitleCase(product.Tipo.ToLower());
                         product.Talla = reader.GetString(2);
                         product.ImagenURl = reader.GetString(3);
                         product.Precio = Convert.ToSingle(reader.GetDouble(4));

@@ -32,8 +32,26 @@
                 <CheckBox IsChecked="False" Content="Shovels"/>
             </StackPanel>-->
 
-
-            <ItemsControl Grid.Row="1" Name="ProductosLista" Loaded="ItemsControl_Loaded" ItemsSource="{Binding lista}" Grid.ColumnSpan="3">
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <!-- Agregando ScrollViewer a la segunda fila y estableciendo la visibilidad de la barra de desplazamiento vertical -->
+                <ScrollViewer.Resources>
+                    <Style TargetType="ScrollBar">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="Transparent"/>
+                    </Style>
+                    <Style TargetType="Thumb">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Thumb">
+                                    <Border Background="{StaticResource color8}" BorderBrush="Transparent" BorderThickness="0" CornerRadius="4"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ScrollViewer.Resources>
+                <ItemsControl  Name="ProductosLista" Loaded="ItemsControl_Loaded" ItemsSource="{Binding lista}" Grid.ColumnSpan="3">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel Orientation="Horizontal" />
@@ -46,7 +64,7 @@
 
                             <StackPanel Orientation="Horizontal">
                                 <Border Width="300" 
-                                        Height="120"  
+                                        Height="150"  
                                         BorderThickness="1"
                                         Background="White"
                                         CornerRadius="10"
@@ -61,9 +79,10 @@
 
                                         <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0,10,0">
                                             <TextBlock Text="{Binding Nombre}" FontSize="16" Margin="5"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding Talla}" Margin="5" HorizontalAlignment="Left"/>
-                                                <TextBlock  Foreground="Blue" FontWeight="Bold" Margin="5,5,5,5" HorizontalAlignment="Right">
+                                            <TextBlock Text="{Binding Tipo}" Margin="5" HorizontalAlignment="Left"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Talla}" Margin="5" HorizontalAlignment="Left"/>
+                                                <TextBlock  Foreground="Blue" FontWeight="Bold" Margin="40,5,5,5" HorizontalAlignment="Right">
                                                     <Run Text="{Binding Precio}"/>
                                                     <Run Text="€"/>
                                                 </TextBlock>
@@ -113,7 +132,7 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
+            </ScrollViewer>
         </Grid>
     </Grid>
 
