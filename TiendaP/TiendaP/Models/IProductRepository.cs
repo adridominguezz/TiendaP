@@ -16,13 +16,20 @@ namespace TiendaP.Models
             Conn.Open();
             return Conn;
         }
-        public static int Agregar (Product product)
+        public static int Agregar(Product product)
         {
             int retorno = 0;
             using (SqlConnection Conn = ObtenerConexion())
             {
-                
-                SqlCommand Comando = new SqlCommand(string.Format("INSERT INTO Products VALUES ('{0}','{1}', '{2}', '{3}', '{4}');", product.Nombre, product.Tipo, product.Talla, product.ImagenURl, product.Precio), Conn);
+                string insertQuery = "INSERT INTO Products (Nombre, Tipo, Talla, ImagenURL, Precio) " +
+                                     "VALUES (@Nombre, @Tipo, @Talla, @ImagenURL, @Precio)";
+
+                SqlCommand Comando = new SqlCommand(insertQuery, Conn);
+                Comando.Parameters.AddWithValue("@Nombre", product.Nombre);
+                Comando.Parameters.AddWithValue("@Tipo", product.Tipo);
+                Comando.Parameters.AddWithValue("@Talla", product.Talla);
+                Comando.Parameters.AddWithValue("@ImagenURL", product.ImagenURl);
+                Comando.Parameters.AddWithValue("@Precio", product.Precio);
 
                 retorno = Comando.ExecuteNonQuery();
                 Conn.Close();
@@ -48,9 +55,9 @@ namespace TiendaP.Models
                         product.Tipo = reader.GetString(1);
                         product.Talla = reader.GetString(2);
                         product.ImagenURl = reader.GetString(3);
-                        //product.Precio = reader.GetFloat(4);
+                        product.Precio = Convert.ToSingle(reader.GetDouble(4));
 
-                        Lista.Add(product);
+                    Lista.Add(product);
                     }
                 conexion.Close();
                

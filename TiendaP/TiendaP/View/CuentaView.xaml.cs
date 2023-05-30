@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace TiendaP.View
             product.Tipo = txtTipo.Text;
             product.Talla = txtTalla.Text;
             product.ImagenURl = txtImagenUrl.Text;
-            product.Precio = float.Parse(txtPrecio.Text);  
+            product.Precio = float.Parse(txtPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
 
             int resultado = IProductRepository.Agregar(product);
 
