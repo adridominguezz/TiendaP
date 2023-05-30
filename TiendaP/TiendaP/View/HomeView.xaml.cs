@@ -40,6 +40,11 @@ namespace TiendaP.View
 
 
             lista = IProductRepository.ObtenerProductos();
+
+            // Ordenar la lista de forma aleatoria
+            Random rnd = new Random();
+            lista = lista.OrderBy(x => rnd.Next()).ToList();
+
             ProductosLista.ItemsSource = lista;
 
             DataContext = this;

@@ -16,7 +16,7 @@ namespace TiendaP.ViewModels
     public class MainViewModel : ViewModelBase
     {
         //Fields
-        private UserAccountModel _currentUserAccount;
+        public UserAccountModel _currentUserAccount;
 
         private ViewModelBase _currentChildView;
         private string _caption;
@@ -93,26 +93,8 @@ namespace TiendaP.ViewModels
 
         public bool IsAdmin
         {
-            get
-            {
-                // Get the current user from the repository.
-                var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
-
-                // Check if the user is an admin.
-                if (user != null && user.Tipo == "admin")
-                {
-                    return true;
-                }
-
-                return false;
-            }
-            set
-            {
-
-            }
+            get { return _currentUserAccount.Tipo == "admin"; }
         }
-
-
 
         private void ExecuteShowContactoViewCommand(object obj)
         {
@@ -157,11 +139,16 @@ namespace TiendaP.ViewModels
                 CurrentUserAccount.Username = user.Username;
                 CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
                 CurrentUserAccount.ProfilePicture = null;
+                CurrentUserAccount.Tipo = user.Tipo; // Asegúrate de establecer la propiedad "Tipo" correctamente
+                OnPropertyChanged(nameof(IsAdmin)); // Notificar cambios en la propiedad IsAdmin
+
+                // Agregar línea de depuración
+                Console.WriteLine($"IsAdmin: {IsAdmin}");
             }
             else
             {
                 CurrentUserAccount.DisplayName = "Invalid user, not logged in";
-                //Hide child views.
+                // Ocultar vistas secundarias.
             }
         }
     }

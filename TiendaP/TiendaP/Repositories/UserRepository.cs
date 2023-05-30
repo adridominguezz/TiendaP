@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using TiendaP.Models;
+using TiendaP.ViewModels;
 
 namespace TiendaP.Repositories
 {
@@ -25,11 +26,37 @@ namespace TiendaP.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select *from [User] where username=@username and [password]=@password";
+                command.CommandText = "SELECT * FROM [User] WHERE username = @username AND [password] = @password";
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = credential.UserName;
                 command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
-                validUser = command.ExecuteScalar() == null ? false : true;
+
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    // Autenticación exitosa
+                    validUser = true;
+                    string userType = reader["role"].ToString();
+
+                    if (userType == "admin")
+                    {
+                        MainViewModel.CurrentUserAccount.Tipo = "admin";
+                    }
+                    else
+                    {
+                        mainViewModel.CurrentUserAccount.Tipo = "regular";
+                    }
+                    mainViewModel.OnPropertyChanged(nameof(mainViewModel.IsAdmin));
+
+                }
+                else
+                {
+                    // Autenticación fallida
+                    validUser = false;
+                }
+
+                reader.Close();
             }
+
             return validUser;
         }
 
@@ -53,7 +80,7 @@ namespace TiendaP.Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "select *from [User] where username=@username";
+                command.CommandText = "select * from [User] where username=@username";
                 command.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 using (var reader = command.ExecuteReader())
                 {

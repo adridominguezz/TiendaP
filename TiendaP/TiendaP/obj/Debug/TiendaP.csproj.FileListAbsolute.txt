@@ -232,3 +232,6 @@ C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.cspro
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.csproj.CopyComplete
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.exe
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.pdb
+C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.dll
+C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.xml

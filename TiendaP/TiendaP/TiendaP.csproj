@@ -59,6 +59,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -85,6 +88,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand.cs" />
+    <Compile Include="View\BoolToVisibilityConverter.cs" />
     <Compile Include="View\CestaView.xaml.cs">
       <DependentUpon>CestaView.xaml</DependentUpon>
     </Compile>
@@ -209,6 +213,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="padel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pelotas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

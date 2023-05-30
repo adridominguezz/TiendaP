@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TiendaP.View"
         xmlns:viewModel="clr-namespace:TiendaP.ViewModels"
-        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:local1="clr-namespace:TiendaP.Models"
         mc:Ignorable="d"
         Title="Candela Shop" Height="700" Width="1300"
         WindowStyle="None"
@@ -19,6 +19,8 @@
     </Window.DataContext>
 
     <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        
         <DataTemplate  DataType="{x:Type viewModel:HomeViewModel}">
             <local:HomeView/>
         </DataTemplate>
@@ -105,7 +107,7 @@
                         <TextBlock Text="CONTACTO" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
-                <RadioButton x:Name="btnProductos" IsChecked="{Binding IsAdmin}" Style="{StaticResource menuButton}"
+                <RadioButton x:Name="btnProductos" Visibility="{Binding IsAdmin, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
                              Command="{Binding ShowCuentaViewCommand}">
                     <StackPanel Orientation="Horizontal">

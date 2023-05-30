@@ -35,16 +35,34 @@ namespace TiendaP.View
             product.Tipo = txtTipo.Text;
             product.Talla = txtTalla.Text;
             product.ImagenURl = txtImagenUrl.Text;
-            product.Precio = float.Parse(txtPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
 
-            int resultado = IProductRepository.Agregar(product);
+            bool error = false;
 
-            if (resultado > 0) {
-                DatosGuardados.Text = "Se han guardado correctamente";
-            } else
+            try
+            {
+                product.Precio = float.Parse(txtPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
+
+                int resultado = IProductRepository.Agregar(product);
+
+                if (resultado > 0)
+                {
+                    DatosGuardados.Text = "Se han guardado correctamente";
+                }
+                else
+                {
+                    error = true;
+                }
+            }
+            catch
+            {
+                error = true;
+            }
+
+            if (error)
             {
                 DatosGuardados.Text = "No se pudieron guardar los datos";
             }
         }
+
     }
 }

@@ -58,13 +58,12 @@ namespace TiendaP.Models
                         product.Tipo = textInfo.ToTitleCase(product.Tipo.ToLower());
                         product.Talla = reader.GetString(2);
                         product.ImagenURl = reader.GetString(3);
-                        product.Precio = Convert.ToSingle(reader.GetDouble(4));
+                        product.Precio = Convert.ToSingle(reader.GetDouble(4)); 
 
-                    Lista.Add(product);
+                        Lista.Add(product);
                     }
                 conexion.Close();
                
-
                 return Lista;
             }
 
