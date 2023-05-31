@@ -24,5 +24,15 @@ namespace TiendaP.Models
             Precio = precio;
         }
 
+
+        public override string ToString()
+        {
+            return $"Nombre: {Nombre}\n" +
+                   $"Marca: {Tipo}\n" +
+                   $"Talla: {Talla}\n" +
+                   $"ImagenURL: {ImagenURl}\n" +
+                   $"Precio: {Precio}";
+        }
+
     }
 }

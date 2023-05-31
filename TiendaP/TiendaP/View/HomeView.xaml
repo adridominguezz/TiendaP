@@ -21,14 +21,26 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="PRODUCTOS MÁS VENDIDOS" TextAlignment="Left" Foreground="{StaticResource color8}"  
-                       Margin="5" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
-                </TextBlock.Effect>
-            </TextBlock>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
 
-            
+                <TextBlock Grid.Column="0" Text="PRODUCTOS MÁS VENDIDOS" TextAlignment="Left" Foreground="{StaticResource color8}" Margin="5" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" >
+                    <fa:IconImage Icon="CartShopping" Style="{StaticResource menuButtonIcon}" Foreground="{StaticResource color8}" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="contCart" Text="0" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" Foreground="White" Margin="-10,0,0,0"/>
+                </StackPanel>
+
+            </Grid>
+
+
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                 <!-- Agregando ScrollViewer a la segunda fila y estableciendo la visibilidad de la barra de desplazamiento vertical -->
                 <ScrollViewer.Resources>
@@ -85,8 +97,8 @@
                                                 </TextBlock>
                                                 <TextBlock Width="0" HorizontalAlignment="Stretch"/>
                                             </StackPanel>
-                                                <Button x:Name="btnLogin"
-                                                        Click="btnLogin_Click"
+                                                <Button x:Name="btnAddCart"
+                                                        Click="btnAddCart_Click"
                                                         BorderThickness="0"
                                                         Content="Añadir al carrito"                         
                                                         Foreground="{StaticResource color5}"

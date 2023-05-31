@@ -237,3 +237,8 @@ C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGi
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.xml
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\NewUserView.g.cs
 C:\Users\Adrian\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\NewUserView.baml
+C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.dll
+C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\bin\Debug\WpfAnimatedGif.xml
+C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\NewUserView.g.cs
+C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\NewUserView.baml

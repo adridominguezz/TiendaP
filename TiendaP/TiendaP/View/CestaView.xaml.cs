@@ -22,29 +22,34 @@ namespace TiendaP.View
     public partial class CestaView : UserControl
     {
 
-        public List<Product> Carrito { get; set; }
+        private static List<Product> _carrito = new List<Product>();
+        public static List<Product> Carrito
+        {
+            get { return _carrito; }
+            set { _carrito = value; }
+        }
 
-        public CestaView(/*List<Product> carrito*/)
+        public CestaView()
         {
             InitializeComponent();
 
-            //Binding Producto = new Binding();
-            //Binding Img = new Binding();
-            //Binding Nombre = new Binding();
-            //Binding Talla = new Binding();
-            //Binding Precio = new Binding();
+            Binding Producto = new Binding();
+            Binding Img = new Binding();
+            Binding Nombre = new Binding();
+            Binding Talla = new Binding();
+            Binding Precio = new Binding();
 
             //Carrito = carrito;
 
-            //Console.WriteLine(Carrito[0].Nombre);
+            Console.WriteLine(Carrito[0].Nombre);
 
-            //DataContext = this;
+            DataContext = this;
         }
 
-        //public Product Product { get; set; }
-        //public string ImagenUrl { get; set; }
-        //public string Nombre { set; get; }
-        //public string Talla { set; get; }
-        //public float Precio { set; get; }
+        public Product Product { get; set; }
+        public string ImagenUrl { get; set; }
+        public string Nombre { set; get; }
+        public string Talla { set; get; }
+        public float Precio { set; get; }
     }
 }
