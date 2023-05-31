@@ -32,13 +32,7 @@ namespace TiendaP.View
 
             contCart.Text = CestaView.Carrito.Count.ToString(); //Cuento cuantos productos tiene en el carrito.
 
-            Binding Producto = new Binding();
-            Binding Img = new Binding();
-            Binding Nombre = new Binding();
-            Binding Talla = new Binding();
-            Binding Precio = new Binding();
-
-
+            
             lista = IProductRepository.ObtenerProductos();
 
             // Ordenar la lista de forma aleatoria
@@ -51,12 +45,6 @@ namespace TiendaP.View
             DataContext = this;
 
         }
-
-        public Product Product { get; set; }
-        public string ImagenUrl { get; set; } 
-        public string Nombre { set; get; }
-        public string Talla { set; get; } 
-        public float Precio { set; get; }
 
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {

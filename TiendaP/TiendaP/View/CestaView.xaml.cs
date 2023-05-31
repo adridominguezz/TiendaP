@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,15 +34,8 @@ namespace TiendaP.View
         {
             InitializeComponent();
 
-            Binding Producto = new Binding();
-            Binding Img = new Binding();
-            Binding Nombre = new Binding();
-            Binding Talla = new Binding();
-            Binding Precio = new Binding();
+            ProductosCesta.ItemsSource = Carrito;
 
-            //Carrito = carrito;
-
-            Console.WriteLine(Carrito[0].Nombre);
 
             DataContext = this;
         }

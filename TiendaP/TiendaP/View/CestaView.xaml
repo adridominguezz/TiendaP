@@ -21,18 +21,63 @@
             </TextBlock.Effect>
         </TextBlock>
 
-        <ItemsControl Grid.Row="1" ItemsSource="{Binding Carrito}">
-            <!-- Aquí puedes definir cómo quieres mostrar cada producto de la lista -->
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding ImagenUrl}" Width="100" Height="100"/>
-                        <TextBlock Text="{Binding Nombre}" FontSize="20"/>
-                        <TextBlock Text="{Binding Talla}" FontSize="20"/>
-                        <TextBlock Text="{Binding Precio}" FontSize="20"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Border Background="White" Margin="5" BorderThickness="1" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="110"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Imagen" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" Text="Nombre" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" Text="Marca" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="3" Text="Talla" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="4" Text="Precio" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="5" Text="Eliminar" FontSize="16" FontWeight="Bold" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                         
+                    </Grid>
+                    <ItemsControl Name="ProductosCesta" Grid.Row="1" ItemsSource="{Binding Carrito}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="110"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="{Binding ImagenUrl}" Width="100" Height="100"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Nombre}" FontSize="20" Margin="10"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Marca}" FontSize="20" Margin="10"/>
+                                    <TextBlock Grid.Column="3" Text="{Binding Talla}" FontSize="20" Margin="10"/>
+                                    <TextBlock Grid.Column="4" Text="{Binding Precio}" FontSize="20" Margin="10"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Border>
+
+        </Grid>
+        
+        
     </Grid>
 </UserControl>
