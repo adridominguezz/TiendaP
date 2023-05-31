@@ -7,35 +7,59 @@
              mc:Ignorable="d"
              d:DesignHeight="550" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image Source="https://cdn-icons-png.flaticon.com/512/4403/4403555.png" VerticalAlignment="Top" Margin="0,50,0,0"
+               />
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
             <TextBlock FontFamily="Montserrat Thin"
-                       FontSize="18"
+                       FontSize="16"
                        TextAlignment="Justify"
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center">
-                <Run Text="¿Qué es Candela Shop?" FontWeight="Bold" Foreground="#FFE94F37" />
-                <LineBreak/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="¿QUÉ ES CANDELA SHOP?" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                       FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
                 <LineBreak/>
                 <Run Text="Candela Shop es una tienda online especializada en la venta de artículos de pádel, como palas, pelotas, zapatillas, ropa y accesorios."/>
                 <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Run Text="¿Cómo puedo comprar en Candela Shop?" FontWeight="Bold" Foreground="#FFE94F37" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="¿CÓMO PUEDO COMPRAR EN CANDELA SHOP?" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                        FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center" TextWrapping="Wrap">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="Para comprar en Candela Shop solo tienes que elegir los productos que te interesen, añadirlos al carrito y seguir los pasos del proceso de compra. Podrás pagar con tarjeta de crédito o débito, PayPal o transferencia bancaria."/>
                 <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Run Text="¿Cuáles son los gastos de envío y el plazo de entrega?" FontWeight="Bold" Foreground="#FFE94F37" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="¿CUÁLES SON LOS GASTOS DE ENVIÍO Y PLAZO DE ENTREGA?" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                        FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center" TextWrapping="Wrap">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="Los gastos de envío son gratuitos. El plazo de entrega es de 24 a 48 horas laborables desde la confirmación del pedido."/>
                 <LineBreak/>
                 <LineBreak/>
-                <LineBreak/>
-                <Run Text="¿Qué garantía tienen los productos?" FontWeight="Bold" Foreground="#FFE94F37" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="¿QUÉ GARANTÍA TIENEN LOS PRODUCTOS?" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                       FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center" 
+                       TextWrapping="Wrap">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                    </TextBlock.Effect>
+                </TextBlock>
                 <LineBreak/>
                 <LineBreak/>
                 <Run Text="Todos los productos tienen una garantía de dos años por defectos de fabricación. Si tienes algún problema con tu compra, puedes contactar con nuestro servicio de atención al cliente para gestionar la devolución o el cambio."/>

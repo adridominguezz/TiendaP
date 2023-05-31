@@ -9,133 +9,138 @@
              d:DesignHeight="550" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="330" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- INFORMACION DE LA TIENDA -->
-        
-        <StackPanel Grid.Column="0" Margin="0,130,0,50" HorizontalAlignment="Center">
-            <TextBlock Grid.Column="0" 
-                       VerticalAlignment="Center" 
-                       HorizontalAlignment="Center" 
-                       FontFamily="Montserrat Thin" 
-                       FontSize="16" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,20" 
-                       TextWrapping="Wrap">
-                <Run Text="INFORMACIÓN DE LA TIENDA" FontWeight="Bold" Foreground="#FFE94F37"/>
-            </TextBlock>
-            <StackPanel Orientation="Horizontal" 
-                        Margin="0,0,0,10">
-                <fa:IconImage Icon="MapMarker" Foreground="#FFE94F37" Margin="10" VerticalAlignment="Top"/>
-                <TextBlock Grid.Column="0"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           FontFamily="Montserrat Thin"
-                           FontSize="16"
-                           FontWeight="Medium"
-                           TextAlignment="Justify"
-                           Margin="0,0,0,20"
-                           TextWrapping="Wrap"
-                           TextTrimming="WordEllipsis">     
-                    <TextBlock.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextWrapping" Value="Wrap"/>
-                            <Setter Property="Margin" Value="0"/>
-                        </Style>
-                    </TextBlock.Resources>
-                    <Run Text="España"/>
-                    <LineBreak/>
-                    <Run Text="C/ DOCTOR ESQUERDO 105"/>
-                    <LineBreak/>
-                    <Run Text="28007 Madrid"/>  
-                </TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal"
-            Margin="0,0,0,10">
-                <fa:IconImage Icon="Envelope" Foreground="#FFE94F37" Margin="10" VerticalAlignment="Top"/>
-                <TextBlock Grid.Column="0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                FontFamily="Montserrat Thin"
-                FontSize="16"
-                FontWeight="Medium"
-                TextAlignment="Justify"
-                Margin="0,0,0,20"
-                TextWrapping="WrapWithOverflow"
-                Width="200">
-                    <TextBlock.Resources>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="TextWrapping" Value="Wrap"/>
-                            <Setter Property="Margin" Value="0"/>
-                        </Style>
-                    </TextBlock.Resources>
-        <Run Text="Envíanos un mensaje de correo electrónico:"/>
-        <LineBreak/>
-        <Run Text="candelashop@gmail.com"/>
-                </TextBlock>
-            </StackPanel>
-        </StackPanel>
+        <Image Source="https://acciontr3s.com/wp-content/uploads/2018/12/contacto-acciontr3s-2.png" VerticalAlignment="Top" Margin="0,50,0,0"
+               />
 
-        <!-- CONTACTA CON NOSOTROS-->
-        
-        <StackPanel Grid.Column="1" Margin="0,130,0,50" HorizontalAlignment="Center">
-            <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" TextAlignment="Center" Margin="0,0,0,20">
-        <Run Text="CONTACTA CON NOSOTROS" FontWeight="Bold" Foreground="#FFE94F37"/>
-            </TextBlock>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Asunto:</TextBlock>
-                <TextBox FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <!-- INFORMACION DE LA TIENDA -->
+            <StackPanel Grid.Column="1" Height="200" HorizontalAlignment="Left"
+                        Margin="30,10,10,10">
+                <TextBlock Grid.Column="0" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center" 
+                           FontFamily="Montserrat Thin" 
+                           FontSize="20" 
+                           TextAlignment="Center" 
+                           Margin="0,0,0,20" 
+                           TextWrapping="Wrap">
+                    <Run Text="INFORMACIÓN DE LA TIENDA" FontWeight="Bold" Foreground="#FFE94F37"/>
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" 
+                            Margin="0,0,0,10">
+                    <fa:IconImage Icon="MapMarker" Foreground="#FFE94F37" Margin="10" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Column="0"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontFamily="Montserrat Thin"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               TextAlignment="Justify"
+                               Margin="0,0,0,20"
+                               TextWrapping="Wrap"
+                               TextTrimming="WordEllipsis">     
+                        <TextBlock.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </TextBlock.Resources>
+                        <Run Text="España"/>
+                        <LineBreak/>
+                        <Run Text="C/ DOCTOR ESQUERDO 105"/>
+                        <LineBreak/>
+                        <Run Text="28007 Madrid"/>  
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                Margin="0,0,0,10">
+                    <fa:IconImage Icon="Envelope" Foreground="#FFE94F37" Margin="10" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Column="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    FontFamily="Montserrat Thin"
+                    FontSize="16"
+                    FontWeight="Medium"
+                    TextAlignment="Justify"
+                    Margin="0,0,0,20"
+                    TextWrapping="WrapWithOverflow"
+                    Width="200">
+                        <TextBlock.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </TextBlock.Resources>
+            <Run Text="Envíanos un mensaje de correo electrónico:"/>
+            <LineBreak/>
+            <Run Text="candelashop@gmail.com"/>
+                    </TextBlock>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Email:</TextBlock>
-                <TextBox FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Archivo adjunto:</TextBlock>
-                <Button Content="Adjuntar archivo" FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
-            </StackPanel>
+
+            <!-- CONTACTA CON NOSOTROS-->
+
+            <StackPanel Grid.Column="1" Height="300" HorizontalAlignment="Left" Margin="30,10,10,10">
+                <TextBlock FontFamily="Montserrat Thin" FontSize="20" FontWeight="Medium" TextAlignment="Center" Margin="0,0,0,20">
+            <Run Text="CONTACTA CON NOSOTROS" FontWeight="Bold" Foreground="#FFE94F37"/>
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Asunto:</TextBlock>
+                    <TextBox FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Email:</TextBlock>
+                    <TextBox FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Archivo adjunto:</TextBlock>
+                    <Button Content="Adjuntar archivo" FontFamily="Montserrat Thin" FontSize="16" Width="250"/>
+                </StackPanel>
             
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Mensaje:</TextBlock>
-                <TextBox FontFamily="Montserrat Thin" FontSize="16" Margin="0,0,0,20" Width="250" Height="100"/>
-            </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontFamily="Montserrat Thin" FontSize="16" FontWeight="Medium" Margin="0,0,10,0" Width="120">Mensaje:</TextBlock>
+                    <TextBox FontFamily="Montserrat Thin" FontSize="16" Margin="0,0,0,20" Width="250" Height="100"/>
+                </StackPanel>
 
-            <Button x:Name="btnContact"
-                            Command="{Binding ContactCommand}"
-                            BorderThickness="0"
-                            Content="Enviar"                         
-                            Foreground="{StaticResource color5}"
-                            FontSize="16"
-                            FontWeight="Medium"
-                            FontFamily="Montserrat Thin"
-                            Cursor="Hand"
-                            HorizontalAlignment="Right"
-                            >
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="{StaticResource color8}"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource color7}"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
+                <Button x:Name="btnContact"
+                                Command="{Binding ContactCommand}"
+                                BorderThickness="0"
+                                Content="Enviar"                         
+                                Foreground="{StaticResource color5}"
+                                FontSize="16"
+                                FontWeight="Medium"
+                                FontFamily="Montserrat Thin"
+                                Cursor="Hand"
+                                HorizontalAlignment="Right"
+                                >
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource color8}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource color7}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
 
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="130" Height="25"
-                                        CornerRadius="5"
-                                        Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="130" Height="25"
+                                            CornerRadius="5"
+                                            Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 
-            </Button>
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </UserControl>
