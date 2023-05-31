@@ -74,7 +74,8 @@
                 <!--Botones del menú-->
                 <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
-                             Command="{Binding ShowHomeViewCommand}">
+                             Command="{Binding ShowHomeViewCommand}"
+                             Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="TIENDA" Style="{StaticResource menuButtonText}"/>
@@ -82,7 +83,8 @@
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
-                             Command="{Binding ShowCestaViewCommand}">
+                             Command="{Binding ShowCestaViewCommand}"
+                             Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="BagShopping" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="CESTA" Style="{StaticResource menuButtonText}"/>
@@ -91,7 +93,8 @@
 
                 <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
-                             Command="{Binding ShowFAQViewCommand}">
+                             Command="{Binding ShowFAQViewCommand}"
+                             Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="ClipboardQuestion" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="FAQ" Style="{StaticResource menuButtonText}"/>
@@ -99,7 +102,8 @@
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
-                             Command="{Binding ShowContactoViewCommand}">
+                             Command="{Binding ShowContactoViewCommand}"
+                             Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="EnvelopesBulk" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="CONTACTO" Style="{StaticResource menuButtonText}"/>
@@ -107,7 +111,8 @@
                 </RadioButton>
                 <RadioButton x:Name="btnProductos" Visibility="{Binding IsAdminVisibility}" Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
-                             Command="{Binding ShowCuentaViewCommand}">
+                             Command="{Binding ShowCuentaViewCommand}"
+                             Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="ShopLock" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="PRODUCTOS" Style="{StaticResource menuButtonText}"/>

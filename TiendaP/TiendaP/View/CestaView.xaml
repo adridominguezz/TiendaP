@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             xmlns:local="clr-namespace:TiendaP.View"
+             xmlns:local="clr-namespace:TiendaP.View" xmlns:viewmodels="clr-namespace:TiendaP.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CestaViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="550" d:DesignWidth="800">
 
@@ -29,30 +29,32 @@
 
 
 
-            <Border Background="White" Margin="5" BorderThickness="1" CornerRadius="5">
+            <Border Background="White" Margin="5" BorderThickness="1" CornerRadius="5" Opacity="0.9">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="120"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="80"/>
-                            <ColumnDefinition Width="110"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Imagen" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Column="1" Text="Nombre" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Column="2" Text="Marca" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Column="3" Text="Talla" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Column="4" Text="Precio" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        <TextBlock Grid.Column="5" Text="Eliminar" FontSize="16" FontWeight="Bold" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="110"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Imagen" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="Nombre" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" Text="Marca" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="3" Text="Talla" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="4" Text="Precio" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="5" Text="Eliminar" FontSize="16" FontWeight="Bold" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                          
-                    </Grid>
-                    <ItemsControl Name="ProductosCesta" Grid.Row="1" ItemsSource="{Binding Carrito}">
+                        </Grid>
+                    </Border>
+                    <ItemsControl Name="ProductosCesta" Grid.Row="1" ItemsSource="{Binding Carrito}" Margin="5">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -64,11 +66,50 @@
                                         <ColumnDefinition Width="80"/>
                                         <ColumnDefinition Width="110"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding ImagenUrl}" Width="100" Height="100"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Nombre}" FontSize="20" Margin="10"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding Marca}" FontSize="20" Margin="10"/>
-                                    <TextBlock Grid.Column="3" Text="{Binding Talla}" FontSize="20" Margin="10"/>
-                                    <TextBlock Grid.Column="4" Text="{Binding Precio}" FontSize="20" Margin="10"/>
+                                    <Image Grid.Column="0" Source="{Binding ImagenURl}" Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Nombre}" FontSize="15" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding Tipo}" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBlock Grid.Column="3" Text="{Binding Talla}" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    <TextBlock  Grid.Column="4" Foreground="Blue"  FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                    <Run Text="{Binding Precio}"/>
+                                                    <Run Text="€"/>
+                                    </TextBlock>
+                                    <Button x:Name="btnDltProduct"
+                                            Click="btnDltProduct_Click"
+                                            Grid.Column="5" 
+                                            Width="30" 
+                                            Height="30" 
+                                            Background="Red" 
+                                            BorderBrush="Transparent" 
+                                            Cursor="Hand"
+                                            
+                                            >
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Grid>
+                                                                <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="5"/>
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Grid>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter TargetName="border" Property="Background" Value="#800000"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                        <Button.Content>
+                                            <Grid>
+                                                <fa:IconImage Icon="Trash" Style="{StaticResource delCartIcon}" Foreground="White"/>
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
@@ -76,6 +117,92 @@
                 </Grid>
             </Border>
 
+
+            <Border Grid.Column="1" 
+                    Background="White" 
+                    Margin="5" 
+                    BorderThickness="1" 
+                    CornerRadius="5" 
+                    Opacity="0.9"
+                    Height="200"
+                    VerticalAlignment="Top"
+                    >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <!-- TITULO DEL CUADRADO -->
+                    <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                        <TextBlock Grid.Column="0" Text="PEDIDO" FontSize="20" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    <!-- CONTENIDO CON LOS DETALLES ECONOMICOS-->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Text="Precio pedido" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="Gastos de envio" Margin="5" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Text="Total pedido" Margin="5" VerticalAlignment="Center"/>
+
+                        <TextBlock x:Name="precioPedido" Grid.Column="1" Grid.Row="0" Margin="5"/>
+                        <TextBlock x:Name="gastoPedido" Grid.Column="1" Grid.Row="1" Text="4,95€" Margin="5"/>
+                        <TextBlock x:Name="totalPedido" Text="0€" Grid.Column="1" Grid.Row="2" Margin="5"/>
+
+                    </Grid>
+                    
+                    <!-- BOTON DE CONFIRMAR COMPRA -->
+
+                    <Button x:Name="btnConfirmarCompra"
+                            Click="btnConfirmarCompra_Click"
+                            BorderThickness="0"
+                            Content="Confirmar compra"                         
+                            Foreground="{StaticResource color5}"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            FontFamily="Montserrat Thin"
+                            Cursor="Hand"
+                            Grid.Row="2"
+                            HorizontalAlignment="Right"
+                            Margin="10">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{StaticResource color1}"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource color8}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="30" CornerRadius="5" Background="{TemplateBinding Background}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <fa:IconImage Icon="CircleCheck" Style="{StaticResource addCartButtonIcon}" Margin="0,0,0,0"/>
+                                        <ContentPresenter Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    
+                </Grid>
+            </Border>
         </Grid>
         
         

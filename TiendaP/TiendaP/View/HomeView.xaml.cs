@@ -50,6 +50,7 @@ namespace TiendaP.View
         {
             
         }
+        
         private void btnAddCart_Click(object sender, RoutedEventArgs e)
         {
             // Obtén el botón que se hizo clic
