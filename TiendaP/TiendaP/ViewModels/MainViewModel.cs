@@ -96,6 +96,8 @@ namespace TiendaP.ViewModels
             get { return _currentUserAccount.Tipo == "admin"; }
         }
 
+
+
         private void ExecuteShowContactoViewCommand(object obj)
         {
             CurrentChildView = new ContactoViewModel();
@@ -150,6 +152,11 @@ namespace TiendaP.ViewModels
                 CurrentUserAccount.DisplayName = "Invalid user, not logged in";
                 // Ocultar vistas secundarias.
             }
+        }
+
+        public Visibility IsAdminVisibility
+        {
+            get { return IsAdmin ? Visibility.Visible : Visibility.Collapsed; }
         }
     }
 }

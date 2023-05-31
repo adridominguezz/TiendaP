@@ -35,17 +35,6 @@ namespace TiendaP.Repositories
                 {
                     // Autenticación exitosa
                     validUser = true;
-                    string userType = reader["role"].ToString();
-
-                    if (userType == "admin")
-                    {
-                        MainViewModel.CurrentUserAccount.Tipo = "admin";
-                    }
-                    else
-                    {
-                        mainViewModel.CurrentUserAccount.Tipo = "regular";
-                    }
-                    mainViewModel.OnPropertyChanged(nameof(mainViewModel.IsAdmin));
 
                 }
                 else

@@ -88,7 +88,6 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand.cs" />
-    <Compile Include="View\BoolToVisibilityConverter.cs" />
     <Compile Include="View\CestaView.xaml.cs">
       <DependentUpon>CestaView.xaml</DependentUpon>
     </Compile>

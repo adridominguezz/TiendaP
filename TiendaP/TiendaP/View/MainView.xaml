@@ -19,8 +19,6 @@
     </Window.DataContext>
 
     <Window.Resources>
-        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-        
         <DataTemplate  DataType="{x:Type viewModel:HomeViewModel}">
             <local:HomeView/>
         </DataTemplate>
@@ -107,7 +105,7 @@
                         <TextBlock Text="CONTACTO" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
-                <RadioButton x:Name="btnProductos" Visibility="{Binding IsAdmin, Converter={StaticResource BoolToVisibilityConverter}}" Style="{StaticResource menuButton}"
+                <RadioButton x:Name="btnProductos" Visibility="{Binding IsAdminVisibility}" Style="{StaticResource menuButton}"
                              Tag="{StaticResource color3}"
                              Command="{Binding ShowCuentaViewCommand}">
                     <StackPanel Orientation="Horizontal">
