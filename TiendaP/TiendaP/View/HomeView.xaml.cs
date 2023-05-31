@@ -25,6 +25,9 @@ namespace TiendaP.View
     {
 
         public List<Product> lista = new List<Product>();
+        public List<Product> carrito = new List<Product>();
+
+
         public HomeView()
         { 
             InitializeComponent();
@@ -60,8 +63,31 @@ namespace TiendaP.View
         private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            // Obtén el botón que se hizo clic
+            Button button = (Button)sender;
 
+            // Obtén el elemento asociado al botón
+            Product producto = button.DataContext as Product;
+
+            // Añade el producto al carrito
+            carrito.Add(producto);
+
+
+            // Crea el CestaView pasándole la lista de productos
+            //CestaView cestaView = new CestaView(carrito);
+
+            
 
         }
+        public List<Product> GetCartList()
+        {
+            return carrito;
+        }
+
+
+
     }
 }

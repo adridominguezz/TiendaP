@@ -1,0 +1,283 @@
+﻿<Window x:Class="TiendaP.View.NewUserView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TiendaP.View"
+       xmlns:viewModel="clr-namespace:TiendaP.ViewModels"
+        xmlns:customcontrols="clr-namespace:TiendaP.CustomControls"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="CANDELA SHOP" Height="700" Width="1000"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Icon="/Images/padel.ico">
+
+    <Window.DataContext>
+        <viewModel:NewUserViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+    <Border CornerRadius="5">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/Fondo.jpg"/>
+        </Border.Background>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+                <StackPanel x:Name="pnlControlBar"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            FlowDirection="RightToLeft"
+                            Background="Transparent"
+                            Margin="0,0,0,0"
+                            MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
+                            MouseEnter="pnlControlBar_MouseEnter">
+
+                    <Button x:Name="btnClose"
+                            Style="{StaticResource controlButton}"
+                            Tag="{StaticResource color3}"
+                            Click="btnClose_Click">
+                        <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+
+                    <Button x:Name="btnMinimize"
+                            Style="{StaticResource controlButton}"
+                            Tag="{StaticResource color3}"
+                            Click="btnMinimize_Click">
+                        <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+
+            <Border CornerRadius="10" Background="AliceBlue" Width="350" Margin="300,40,300,-660" RenderTransformOrigin="0.5,0.5" Opacity="0.95">
+                <StackPanel >
+                    <Image Source="/Images/padel.png" Width="150" Height="150"/>
+                    <TextBlock Text="NUEVO USUARIO" 
+                                   Foreground="Black" 
+                                   FontSize="25" 
+                                   FontWeight="BOLD" 
+                                   FontFamily="Montserrat Thin" 
+                                   HorizontalAlignment="Center" Cursor=""
+                               Margin="0,0,0,10"/>
+                    <!--NOMBRE -->
+                    <TextBlock Text="Nombre" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="18" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10,0,1,0"/>
+
+                    <TextBox x:Name="txtName"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10"
+                             Padding="25,0,0,0"
+                             Background="Transparent">
+                    </TextBox>
+                    <!--APELLIDO -->
+                    <TextBlock Text="Apellidos" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="18" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10,0,10,0"/>
+
+                    <TextBox x:Name="txtSurname"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10"
+                             Padding="25,0,0,0"
+                             Background="Transparent">
+                    </TextBox>
+
+                    <!-- CORREO -->
+                    <TextBlock Text="Email" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="18" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10,0,10,0"/>
+
+                    <TextBox x:Name="txtEmail"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10"
+                             Padding="25,0,0,0"
+                             Background="Transparent">
+                    </TextBox>
+
+                    <TextBlock Text="Usuario" 
+                               Foreground="Black"
+                               FontWeight="Medium"
+                               FontSize="18" 
+                               FontFamily="Montserrat Thin" 
+                               TextAlignment="Left" 
+                               Margin="10,0,10,0"/>    
+
+                    <TextBox x:Name="txtUser"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10"
+                             Padding="25,0,0,0"
+                             Background="Transparent">
+
+                    </TextBox>
+
+                    <TextBlock Text="Contraseña" 
+                               Foreground="Black"
+                               FontWeight="Medium"
+                               FontSize="18" 
+                               FontFamily="Montserrat Thin" 
+                               TextAlignment="Left" 
+                               Margin="10,0,10,0"/>
+
+                    <TextBox x:Name="txtPassword"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10"
+                             Padding="25,0,0,0"
+                             Background="Transparent">
+
+                    </TextBox>
+
+                    <TextBlock x:Name="usuarioCreado"
+                               Foreground="Red"
+                               FontWeight="Bold"
+                               FontSize="15" FontFamily="Montserrat Thin" 
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center" 
+                               />
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="10">
+
+                        <Button x:Name="btnVolver"
+                                BorderThickness="0"
+                                Content="VOLVER"                         
+                                Foreground="{StaticResource color5}"
+                                FontSize="16"
+                                FontWeight="Medium"
+                                FontFamily="Montserrat Thin"
+                                Cursor="Hand"                        
+                                Margin="10"
+                                Click="btnVolver_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource color1}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource color8}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="90" Height="30"
+                                            CornerRadius="5"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Button x:Name="btnNewUser"
+                                BorderThickness="0"
+                                Content="CREAR USUARIO"                         
+                                Foreground="{StaticResource color5}"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                FontFamily="Montserrat Thin"
+                                Cursor="Hand"                        
+                                Margin="10"
+                                Click="btnNewUser_Click">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource color1}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource color8}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="200" Height="50"
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+        
+    </Border>
+</Window>

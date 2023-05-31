@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TiendaP.Models;
 
 namespace TiendaP.View
 {
@@ -20,9 +21,30 @@ namespace TiendaP.View
     /// </summary>
     public partial class CestaView : UserControl
     {
-        public CestaView()
+
+        public List<Product> Carrito { get; set; }
+
+        public CestaView(/*List<Product> carrito*/)
         {
             InitializeComponent();
+
+            //Binding Producto = new Binding();
+            //Binding Img = new Binding();
+            //Binding Nombre = new Binding();
+            //Binding Talla = new Binding();
+            //Binding Precio = new Binding();
+
+            //Carrito = carrito;
+
+            //Console.WriteLine(Carrito[0].Nombre);
+
+            //DataContext = this;
         }
+
+        //public Product Product { get; set; }
+        //public string ImagenUrl { get; set; }
+        //public string Nombre { set; get; }
+        //public string Talla { set; get; }
+        //public float Precio { set; get; }
     }
 }

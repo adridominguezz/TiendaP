@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -14,15 +15,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TiendaP.Models;
 
 namespace TiendaP.View
 {
     /// <summary>
-    /// Lógica de interacción para LoginView.xaml
+    /// Lógica de interacción para NewUserView.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class NewUserView : Window
     {
-        public LoginView()
+        public NewUserView()
         {
             InitializeComponent();
         }
@@ -51,14 +53,48 @@ namespace TiendaP.View
                 this.WindowState = WindowState.Maximized;
             else this.WindowState = WindowState.Normal;
         }
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btnNewUser_Click(object sender, RoutedEventArgs e)
         {
-            NewUserView newUserView = new NewUserView();
-            newUserView.Owner = this; // Establecer la ventana principal como propietaria de la ventana secundaria
-            newUserView.ShowDialog(); // Mostrar la ventana secundaria como diálogo modal
+            User usuario = new User();
+            usuario.Name = txtName.Text;
+            usuario.LastName = txtSurname.Text;
+            usuario.Email = txtEmail.Text;
+            usuario.Username = txtUser.Text;
+            usuario.Password = txtPassword.Text;
+            usuario.Tipo = "cliente";
+
+
+            Console.Write(usuario);
+            bool error = false;
+
+            try
+            {
+                int resultado = INewUserRepository.CrearUsuario(usuario);
+                if (resultado > 0)
+                {
+                    usuarioCreado.Text = "Se han guardado correctamente";
+                }
+                else
+                {
+                    error = true;
+                }
+            }
+            catch
+            {
+                error = true;
+            }
+
+            if (error)
+            {
+                usuarioCreado.Text = "No se pudieron guardar los datos";
+            }
+        }
+
+        private void btnVolver_Click(object sender, RoutedEventArgs e)
+        {
+            // Cerrar la ventana actual
+            this.Close();
+
         }
     }
-
-       
 }
-

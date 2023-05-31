@@ -28,13 +28,7 @@
                 </TextBlock.Effect>
             </TextBlock>
 
-            <!--<StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
-                <TextBlock Text="Product Filter" Margin="0,0,20,0"/>
-                <CheckBox IsChecked="False" Content="T-Shirts"/>
-                <CheckBox IsChecked="False" Content="Shoes"/>
-                <CheckBox IsChecked="False" Content="Shovels"/>
-            </StackPanel>-->
-
+            
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                 <!-- Agregando ScrollViewer a la segunda fila y estableciendo la visibilidad de la barra de desplazamiento vertical -->
                 <ScrollViewer.Resources>
@@ -91,15 +85,16 @@
                                                 </TextBlock>
                                                 <TextBlock Width="0" HorizontalAlignment="Stretch"/>
                                             </StackPanel>
-                                            <Button x:Name="btnLogin"
-                                                    BorderThickness="0"
-                                                    Content="Añadir al carrito"                         
-                                                    Foreground="{StaticResource color5}"
-                                                    FontSize="13"
-                                                    FontWeight="Bold"
-                                                    FontFamily="Montserrat Thin"
-                                                    Cursor="Hand"
-                                                    Margin="0,10,0,0">
+                                                <Button x:Name="btnLogin"
+                                                        Click="btnLogin_Click"
+                                                        BorderThickness="0"
+                                                        Content="Añadir al carrito"                         
+                                                        Foreground="{StaticResource color5}"
+                                                        FontSize="13"
+                                                        FontWeight="Bold"
+                                                        FontFamily="Montserrat Thin"
+                                                        Cursor="Hand"
+                                                        Margin="0,10,0,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="Background" Value="{StaticResource color1}"/>

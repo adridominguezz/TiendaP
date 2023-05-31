@@ -20,5 +20,6 @@ namespace TiendaP.Models
         public string Tipo { get; set; }
 
 
+
     }
 }
