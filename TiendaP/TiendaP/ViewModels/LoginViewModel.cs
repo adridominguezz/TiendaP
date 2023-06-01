@@ -117,7 +117,7 @@ namespace TiendaP.ViewModels
             }
             else
             {
-                ErrorMessage = "* Invalid username or password";
+                ErrorMessage = "* Usuario o contraseña erronea *";
             }
         }
 

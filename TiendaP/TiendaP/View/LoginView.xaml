@@ -145,6 +145,7 @@
                                                         Margin="10"></customcontrols:BindablePasswordBox>
 
                         <TextBlock x:Name="errorLogin"
+                                   Text="{Binding ErrorMessage}"
                                    Foreground="Red"
                                    FontSize="15" FontFamily="Montserrat Thin" 
                                    TextWrapping="Wrap" 
