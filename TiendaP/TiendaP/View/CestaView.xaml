@@ -34,6 +34,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
                         <Grid >
@@ -54,7 +55,9 @@
 
                         </Grid>
                     </Border>
-                    <ItemsControl Name="ProductosCesta" Grid.Row="1" ItemsSource="{Binding Carrito}" Margin="5">
+                    <!-- PRODUCTOS QUE ESTA EN LA CESTA -->
+                    <ScrollViewer Grid.Row="1"> 
+                        <ItemsControl Name="ProductosCesta"  ItemsSource="{Binding Carrito}" Margin="5">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -114,6 +117,47 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
+                    </ScrollViewer>
+                    <!-- BOTON VACIAR TIENDA -->
+                    <Button x:Name="btnvaciarCesta"
+                            Click="btnvaciarCesta_Click"
+                            BorderThickness="0"
+                            Content="Vaciar cesta"                         
+                            Foreground="{StaticResource color5}"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            FontFamily="Montserrat Thin"
+                            Cursor="Hand"
+                            Grid.Row="2"
+                            HorizontalAlignment="Right"
+                            Margin="5">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{StaticResource color1}"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource color8}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="130" Height="30" CornerRadius="5" Background="{TemplateBinding Background}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <fa:IconImage Icon="CircleXmark" Style="{StaticResource addCartButtonIcon}" Margin="0"/>
+                                        <ContentPresenter Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </Border>
 

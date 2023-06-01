@@ -145,8 +145,6 @@
                                                         Margin="10"></customcontrols:BindablePasswordBox>
 
                         <TextBlock x:Name="errorLogin"
-                                   Visibility="Collapsed"
-                                   Text="* Usuario incorrecto" 
                                    Foreground="Red"
                                    FontSize="15" FontFamily="Montserrat Thin" 
                                    TextWrapping="Wrap" 
@@ -162,7 +160,7 @@
                             FontWeight="Bold"
                             FontFamily="Montserrat Thin"
                             Cursor="Hand"                        
-                            Margin="0,30,0,0"
+                            Margin="0,20,0,0"
                             >
                             <Button.Style>
                                 <Style TargetType="Button">

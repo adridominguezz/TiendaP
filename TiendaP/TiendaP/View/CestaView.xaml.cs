@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using TiendaP.Models;
 using TiendaP.ViewModels;
 
@@ -120,6 +121,24 @@ namespace TiendaP.View
         {
             Carrito.Clear();
             confirmarPedido.Text = "Pedido confirmado";
+            comprobarPrecio();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            DispatcherTimer timer = (DispatcherTimer)sender;
+            timer.Stop();
+            confirmarPedido.Text = ""; // Establecer el texto en blanco
+        }
+
+        private void btnvaciarCesta_Click(object sender, RoutedEventArgs e)
+        {
+            Carrito.Clear();
             comprobarPrecio();
         }
     }
