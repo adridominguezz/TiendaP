@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TiendaP.Models;
+using Button = System.Windows.Controls.Button;
 
 namespace TiendaP.View
 {
@@ -23,9 +25,21 @@ namespace TiendaP.View
     /// </summary>
     public partial class CuentaView : System.Windows.Controls.UserControl
     {
+        public List<Product> productosTienda = new List<Product>();
         public CuentaView()
         {
             InitializeComponent();
+
+            productosTienda = IProductRepository.ObtenerProductos();
+
+            ProductosTienda.ItemsSource = productosTienda;
+
+            DataContext = this;
+
+        }
+        private void ItemsControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
@@ -44,9 +58,15 @@ namespace TiendaP.View
 
                 int resultado = IProductRepository.Agregar(product);
 
+                // Refrescar el origen de datos del control
+                ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
+                ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+
                 if (resultado > 0)
                 {
                     DatosGuardados.Text = "Se han guardado correctamente";
+                    
+
                 }
                 else
                 {
@@ -64,5 +84,28 @@ namespace TiendaP.View
             }
         }
 
+        private void btnSuprProduct_Click(object sender, RoutedEventArgs e)
+        {
+            // Obtén el botón que se hizo clic
+            Button btn = (Button)sender;
+
+            // Obtener el producto asociado al botón
+            Product product = (Product)btn.DataContext;
+
+            // Eliminar el producto de la base de datos
+            int resultado = IProductRepository.Eliminar(product);
+
+            if (resultado > 0)
+            {
+                // Eliminación exitosa, actualizar la lista de productos
+                productosTienda.Remove(product);
+                ProductosTienda.Items.Refresh();
+            }
+            else
+            {
+                // Error al eliminar el producto
+                DatosGuardados.Text = "No se pudo eliminar el producto";
+            }
+        }
     }
 }

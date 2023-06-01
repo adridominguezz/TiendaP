@@ -8,6 +8,7 @@ namespace TiendaP.Models
 {
     public class Product
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Talla { get; set; }
@@ -15,8 +16,9 @@ namespace TiendaP.Models
         public float Precio { get; set; }
 
         public Product() { }
-        public Product( string nombre,string tipo, string talla, string imagenURl, float precio)
+        public Product( int id, string nombre,string tipo, string talla, string imagenURl, float precio)
         {
+            Id = id;
             Nombre = nombre;
             Tipo = tipo;
             Talla = talla;

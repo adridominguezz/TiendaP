@@ -44,7 +44,7 @@ namespace TiendaP.Models
 
             using (SqlConnection conexion = ObtenerConexion())
             {
-                SqlCommand comando = new SqlCommand("Use TiendaP; SELECT Nombre, Tipo, Talla, ImagenUrl, Precio FROM Products", conexion);
+                SqlCommand comando = new SqlCommand("Use TiendaP; SELECT idProducto, Nombre, Tipo, Talla, ImagenUrl, Precio FROM Products", conexion);
                
 
                 SqlDataReader reader = comando.ExecuteReader();
@@ -52,13 +52,14 @@ namespace TiendaP.Models
                     while (reader.Read())
                     {
                         Product product = new Product();
-                        product.Nombre = (reader.GetString(0)).ToUpper(); 
-                        product.Tipo = reader.GetString(1);
+                        product.Id = reader.GetInt32(0);
+                        product.Nombre = (reader.GetString(1)).ToUpper(); 
+                        product.Tipo = reader.GetString(2);
                         TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
                         product.Tipo = textInfo.ToTitleCase(product.Tipo.ToLower());
-                        product.Talla = reader.GetString(2);
-                        product.ImagenURl = reader.GetString(3);
-                        product.Precio = Convert.ToSingle(reader.GetDouble(4)); 
+                        product.Talla = reader.GetString(3);
+                        product.ImagenURl = reader.GetString(4);
+                        product.Precio = Convert.ToSingle(reader.GetDouble(5)); 
 
                         Lista.Add(product);
                     }
@@ -67,6 +68,22 @@ namespace TiendaP.Models
                 return Lista;
             }
 
+        }
+
+        public static int Eliminar(Product product)
+        {
+            int retorno = 0;
+            using (SqlConnection Conn = ObtenerConexion())
+            {
+                string deleteQuery = "DELETE FROM Products WHERE idProducto = @Id";
+
+                SqlCommand Comando = new SqlCommand(deleteQuery, Conn);
+                Comando.Parameters.AddWithValue("@Id", product.Id);
+
+                retorno = Comando.ExecuteNonQuery();
+                Conn.Close();
+            }
+            return retorno;
         }
     }
 }

@@ -23,7 +23,7 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
@@ -49,9 +49,9 @@
                             <TextBlock Grid.Column="1" Text="Nombre" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Grid.Column="2" Text="Marca" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Grid.Column="3" Text="Talla" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Grid.Column="4" Text="Precio" FontSize="16" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Grid.Column="4" Text="Precio" FontSize="16" FontWeight="Bold" Margin="0,0,17,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                             <TextBlock Grid.Column="5" Text="Eliminar" FontSize="16" FontWeight="Bold" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                         
+
                         </Grid>
                     </Border>
                     <ItemsControl Name="ProductosCesta" Grid.Row="1" ItemsSource="{Binding Carrito}" Margin="5">
@@ -158,7 +158,7 @@
                         <TextBlock x:Name="totalPedido" Text="0€" Grid.Column="1" Grid.Row="2" Margin="5"/>
 
                     </Grid>
-                    
+
                     <!-- BOTON DE CONFIRMAR COMPRA -->
 
                     <Button x:Name="btnConfirmarCompra"
@@ -200,11 +200,11 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    
+
                 </Grid>
             </Border>
         </Grid>
-        
-        
+
+
     </Grid>
 </UserControl>
