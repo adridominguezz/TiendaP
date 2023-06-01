@@ -117,8 +117,9 @@
                 </Grid>
             </Border>
 
-
-            <Border Grid.Column="1" 
+            <!-- BLOQUE DE PRECIO DE PEDIDO Y CONFIRMAR COMPRA -->
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Border Grid.Column="1" 
                     Background="White" 
                     Margin="5" 
                     BorderThickness="1" 
@@ -127,41 +128,41 @@
                     Height="200"
                     VerticalAlignment="Top"
                     >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="50"/>
-                    </Grid.RowDefinitions>
-                    <!-- TITULO DEL CUADRADO -->
-                    <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
-                        <TextBlock Grid.Column="0" Text="PEDIDO" FontSize="20" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Border>
-                    <!-- CONTENIDO CON LOS DETALLES ECONOMICOS-->
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="60"/>
-                        </Grid.ColumnDefinitions>
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
+                        <!-- TITULO DEL CUADRADO -->
+                        <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                            <TextBlock Grid.Column="0" Text="PEDIDO" FontSize="20" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <!-- CONTENIDO CON LOS DETALLES ECONOMICOS-->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Text="Precio pedido" Margin="5" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="1" Text="Gastos de envio" Margin="5" VerticalAlignment="Center"/>
-                        <TextBlock Grid.Row="2" Text="Total pedido" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Row="0" Text="Precio pedido" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Row="1" Text="Gastos de envio" Margin="5" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Row="2" Text="Total pedido" Margin="5" VerticalAlignment="Center"/>
 
-                        <TextBlock x:Name="precioPedido" Grid.Column="1" Grid.Row="0" Margin="5"/>
-                        <TextBlock x:Name="gastoPedido" Grid.Column="1" Grid.Row="1" Text="4,95€" Margin="5"/>
-                        <TextBlock x:Name="totalPedido" Text="0€" Grid.Column="1" Grid.Row="2" Margin="5"/>
+                            <TextBlock x:Name="precioPedido" Grid.Column="1" Grid.Row="0" Margin="5"/>
+                            <TextBlock x:Name="gastoPedido" Grid.Column="1" Grid.Row="1" Text="4,95€" Margin="5"/>
+                            <TextBlock x:Name="totalPedido" Text="0€" Grid.Column="1" Grid.Row="2" Margin="5"/>
 
-                    </Grid>
+                        </Grid>
 
-                    <!-- BOTON DE CONFIRMAR COMPRA -->
+                        <!-- BOTON DE CONFIRMAR COMPRA -->
 
-                    <Button x:Name="btnConfirmarCompra"
+                        <Button x:Name="btnConfirmarCompra"
                             Click="btnConfirmarCompra_Click"
                             BorderThickness="0"
                             Content="Confirmar compra"                         
@@ -173,37 +174,40 @@
                             Grid.Row="2"
                             HorizontalAlignment="Right"
                             Margin="10">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="{StaticResource color1}"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="{StaticResource color8}"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource color1}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource color8}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="30" CornerRadius="5" Background="{TemplateBinding Background}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30"/>
-                                            <ColumnDefinition Width="*"/>
-                                        </Grid.ColumnDefinitions>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="30" CornerRadius="5" Background="{TemplateBinding Background}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
 
-                                        <fa:IconImage Icon="CircleCheck" Style="{StaticResource addCartButtonIcon}" Margin="0,0,0,0"/>
-                                        <ContentPresenter Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                                    </Grid>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                                            <fa:IconImage Icon="CircleCheck" Style="{StaticResource addCartButtonIcon}" Margin="0,0,0,0"/>
+                                            <ContentPresenter Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        </Grid>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
 
-                </Grid>
-            </Border>
-        </Grid>
+                    </Grid>
+                </Border>
+                <TextBlock x:Name="confirmarPedido" Foreground="Red" TextAlignment="Center" Margin="10"  />
+
+            </StackPanel>
+            </Grid>
 
 
     </Grid>

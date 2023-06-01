@@ -67,8 +67,35 @@ namespace TiendaP.View
         public string Talla { set; get; }
         public float Precio { set; get; }
 
-        
-        
+        private void comprobarPrecio()
+        {
+            // Recalcular el precio de compra
+            precioCompra = (float)Math.Round(precioCompra, 2);
+            precioCompra = 0;
+            foreach (Product p in Carrito)
+            {
+                precioCompra += p.Precio;
+            }
+
+            // Actualizar los textos con los nuevos precios
+            precioPedido.Text = (precioCompra).ToString("0.00") + "€";
+            if (precioCompra > 100)
+            {
+                gastoPedido.Text = ("0€");
+                totalPedido.Text = (precioCompra).ToString("0.00") + "€";
+            }
+            else
+            {
+                gastoPedido.Text = "4.95€";
+                totalPedido.Text = (precioCompra + 4.95f).ToString("0.00") + "€";
+            }
+
+            // Refrescar el origen de datos del control
+            ProductosCesta.ItemsSource = null;  // Limpia el origen de datos actual
+            ProductosCesta.ItemsSource = Carrito; // Asigna la lista actualizada como nuevo origen de datos
+
+        }
+
         private void btnDltProduct_Click(object sender, RoutedEventArgs e)
         {
             // Obtén el botón que se hizo clic
@@ -82,29 +109,7 @@ namespace TiendaP.View
                 // Eliminar el elemento de la lista "Carrito"
                 Carrito.Remove(producto);
 
-                // Recalcular el precio de compra
-                precioCompra = (float)Math.Round(precioCompra, 2);
-                precioCompra = 0;
-                foreach (Product p in Carrito)
-                {
-                    precioCompra += p.Precio;
-                }
-
-                // Actualizar los textos con los nuevos precios
-                precioPedido.Text = (precioCompra).ToString("0.00") + "€";
-                if (precioCompra > 100)
-                {
-                    gastoPedido.Text = ("0€");
-                    totalPedido.Text = (precioCompra).ToString("0.00") + "€";
-                } else
-                {
-                    totalPedido.Text = (precioCompra + 4.95f).ToString("0.00") + "€";
-                }
-
-                // Refrescar el origen de datos del control
-                ProductosCesta.ItemsSource = null;  // Limpia el origen de datos actual
-                ProductosCesta.ItemsSource = Carrito; // Asigna la lista actualizada como nuevo origen de datos
-
+                comprobarPrecio();
 
             }
 
@@ -113,7 +118,9 @@ namespace TiendaP.View
 
         private void btnConfirmarCompra_Click(object sender, RoutedEventArgs e)
         {
-
+            Carrito.Clear();
+            confirmarPedido.Text = "Pedido confirmado";
+            comprobarPrecio();
         }
     }
 }

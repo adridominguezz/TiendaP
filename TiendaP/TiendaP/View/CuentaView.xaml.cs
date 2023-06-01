@@ -65,8 +65,6 @@ namespace TiendaP.View
                 if (resultado > 0)
                 {
                     DatosGuardados.Text = "Se han guardado correctamente";
-                    
-
                 }
                 else
                 {
