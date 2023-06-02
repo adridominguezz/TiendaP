@@ -20,6 +20,7 @@
                        TextAlignment="Justify"
                        TextWrapping="Wrap"
                        HorizontalAlignment="Center"
+                       Foreground="White"
                        VerticalAlignment="Center">
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="¿QUÉ ES CANDELA SHOP?" TextAlignment="Left" Foreground="{StaticResource color8}"  
                        FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
