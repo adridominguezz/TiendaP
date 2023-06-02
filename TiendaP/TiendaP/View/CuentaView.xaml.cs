@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TiendaP.Models;
 using Button = System.Windows.Controls.Button;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace TiendaP.View
 {
@@ -58,13 +59,14 @@ namespace TiendaP.View
 
                 int resultado = IProductRepository.Agregar(product);
 
-                // Refrescar el origen de datos del control
-                ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
-                ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
 
                 if (resultado > 0)
                 {
                     DatosGuardados.Text = "Se han guardado correctamente";
+                    // Refrescar el origen de datos del control
+
+                    ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
+                    ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
                 }
                 else
                 {
@@ -97,13 +99,94 @@ namespace TiendaP.View
             {
                 // Eliminación exitosa, actualizar la lista de productos
                 productosTienda.Remove(product);
-                ProductosTienda.Items.Refresh();
+
+                // Refrescar el origen de datos del control
+
+                ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
+                ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
             }
             else
             {
                 // Error al eliminar el producto
                 DatosGuardados.Text = "No se pudo eliminar el producto";
             }
+        }
+
+        private void btnEditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            // Obtén el botón que se hizo clic
+            Button btn = (Button)sender;
+
+            // Obtener el producto asociado al botón
+            Product product = (Product)btn.DataContext;
+
+            // Eliminar el producto de la base de datos
+            int resultado = IProductRepository.Eliminar(product);
+
+            TextBox cambioNombre = FindVisualChild<TextBox>(btn, "CambioNombre");
+            TextBox cambioMarca = FindVisualChild<TextBox>(btn, "CambioMarca");
+            TextBox cambioTalla = FindVisualChild<TextBox>(btn, "CambioTalla");
+            TextBox cambioImagen = FindVisualChild<TextBox>(btn, "CambioImagen");
+            TextBox cambioPrecio = FindVisualChild<TextBox>(btn, "CambioPrecio");
+
+            if (cambioNombre != null && cambioMarca != null && cambioTalla != null && cambioImagen != null && cambioPrecio != null)
+            {
+                product.Nombre = cambioNombre.Text;
+                product.Tipo = cambioMarca.Text;
+                product.Talla = cambioTalla.Text;
+                product.ImagenURl = cambioImagen.Text;
+                product.Precio = float.Parse(cambioPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
+            }
+
+            resultado = IProductRepository.Agregar(product);
+            
+
+            // Refrescar el origen de datos del control
+
+            ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
+            ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+        }
+
+        private static T FindVisualChild<T>(DependencyObject parent, string childName) where T : DependencyObject
+        {
+            if (parent == null)
+                return null;
+
+            T foundChild = null;
+            int childrenCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childrenCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                T childType = child as T;
+                if (childType == null)
+                {
+                    foundChild = FindVisualChild<T>(child, childName);
+                    if (foundChild != null)
+                        break;
+                }
+                else if (!string.IsNullOrEmpty(childName))
+                {
+                    var frameworkElement = child as FrameworkElement;
+                    if (frameworkElement != null && frameworkElement.Name == childName)
+                    {
+                        foundChild = (T)child;
+                        break;
+                    }
+                }
+                else
+                {
+                    foundChild = (T)child;
+                    break;
+                }
+            }
+
+            return foundChild;
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
+            ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
         }
     }
 }

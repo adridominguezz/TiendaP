@@ -23,7 +23,7 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
@@ -53,8 +53,7 @@
                 <TextBox x:Name="txtImagenUrl"  Grid.Row="3" Grid.Column="1" Margin="5"/>
                 <TextBox x:Name="txtPrecio"  Grid.Row="4" Grid.Column="1" Margin="5"/>
                 <StackPanel Orientation="Vertical" 
-                Grid.Row="5"
-                Grid.Column="1">
+                Grid.Row="5" Grid.ColumnSpan="2" Margin="70,0,50,150">
                     <Button x:Name="btnGuardar"
                             BorderThickness="0"
                             Content="Guardar producto"                         
@@ -100,46 +99,93 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
                         <Grid >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="25*"/>
                                 <ColumnDefinition Width="15*"/>
                                 <ColumnDefinition Width="10*"/>
                                 <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="15*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="8*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="Nombre" FontSize="14" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock Grid.Column="1" Text="Marca" FontSize="14" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock Grid.Column="2" Text="Talla" FontSize="14" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock Grid.Column="3" Text="Precio" FontSize="14" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock Grid.Column="4" Text="Eliminar" FontSize="14" FontWeight="Bold" Margin="10" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="0" Text="Nombre" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Text="Marca" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="2" Text="Talla" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="3" Text="Url Imagen" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="4" Text="Precio" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="5" Text="Editar" FontSize="12" FontWeight="Bold" Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="6" Text="Eliminar" FontSize="12" FontWeight="Bold" Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
                         </Grid>
                     </Border>
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-                        <ItemsControl Name="ProductosTienda" Loaded="ItemsControl_Loaded" ItemsSource="{Binding Carrito}" Margin="5">
+                        <ItemsControl Name="ProductosTienda" Loaded="ItemsControl_Loaded" ItemsSource="{Binding ProductosTienda}" Margin="5">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="25*" />
-                                            <ColumnDefinition Width="15*" />
-                                            <ColumnDefinition Width="10*" />
+                                            <ColumnDefinition Width="15*"/>
                                             <ColumnDefinition Width="10*"/>
                                             <ColumnDefinition Width="10*"/>
-                                    </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Text="{Binding Nombre}" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                                        <TextBlock Grid.Column="1" Text="{Binding Tipo}" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,10,10,10"/>
-                                        <TextBlock Grid.Column="2" Text="{Binding Talla}" FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
-                                        <TextBlock  Grid.Column="3" Foreground="Blue"  FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
-                                                    <Run Text="{Binding Precio}"/>
+                                            <ColumnDefinition Width="15*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                            <ColumnDefinition Width="8*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBox x:Name="CambioNombre" Grid.Column="0" Text="{Binding Nombre}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" BorderBrush="Transparent"/>
+                                        <TextBox x:Name="CambioMarca" Grid.Column="1" Text="{Binding Tipo}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,10,10,10" BorderBrush="Transparent"/>
+                                        <TextBox x:Name="CambioTalla" Grid.Column="2" Text="{Binding Talla}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" BorderBrush="Transparent"/>
+                                        <TextBox x:Name="CambioImagen" Grid.Column="3" Text="{Binding ImagenURl}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" BorderBrush="Transparent"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
+                                            <TextBox x:Name="CambioPrecio" Foreground="Blue"  FontSize="12" Text="{Binding Precio}" BorderBrush="Transparent"/>
+                                            <TextBlock Foreground="Blue"  FontSize="12" Text="€" />
+                                         </StackPanel>
+                                        <!--<TextBlock  Grid.Column="4" Foreground="Blue"  FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
+                                                    <Run Text=""/>
                                                     <Run Text="€"/>
-                                    </TextBlock>
-                                    <Button x:Name="btnSuprProduct"
+                                    </TextBlock>-->
+                                        <Button x:Name="btnEditProduct"
+                                            Click="btnEditProduct_Click"
+                                            Grid.Column="5"
+                                            Width="30" 
+                                            Height="30" 
+                                            Background="Green" 
+                                            BorderBrush="Transparent" 
+                                            Cursor="Hand"
+                                            HorizontalAlignment="Center" Margin="10"
+                                            >
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Grid>
+                                                                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="5"/>
+                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                                </Grid>
+                                                                <ControlTemplate.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter TargetName="border" Property="Background" Value="DarkGreen"/>
+                                                                    </Trigger>
+                                                                </ControlTemplate.Triggers>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Button.Style>
+                                            <Button.Content>
+                                                <Grid>
+                                                    <fa:IconImage Icon="PenToSquare" Style="{StaticResource delCartIcon}" Foreground="White"/>
+                                                </Grid>
+                                            </Button.Content>
+                                        </Button>
+                                        <Button x:Name="btnSuprProduct"
                                             Click="btnSuprProduct_Click"
-                                            Grid.Column="4"
+                                            Grid.Column="6"
                                             Width="30" 
                                             Height="30" 
                                             Background="Red" 
@@ -178,6 +224,43 @@
                         </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </ScrollViewer>
+                    <Button x:Name="btnActualizar"
+                            BorderThickness="0"
+                            Content="Actualizar"                         
+                            Foreground="{StaticResource color5}"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            FontFamily="Montserrat Thin"
+                            Cursor="Hand"
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Right"
+                            Margin="5"
+                            Click="btnActualizar_Click"
+                            >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="{StaticResource color1}"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{StaticResource color8}"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="200" Height="30"
+                                        CornerRadius="5"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </Border>
         </Grid>
