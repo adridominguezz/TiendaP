@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -31,9 +32,8 @@ namespace TiendaP.View
         {
             InitializeComponent();
 
-            productosTienda = IProductRepository.ObtenerProductos();
-
-            ProductosTienda.ItemsSource = productosTienda;
+            
+            ActualizarOrigenDatos();
 
             DataContext = this;
 
@@ -64,9 +64,7 @@ namespace TiendaP.View
                 {
                     DatosGuardados.Text = "Se han guardado correctamente";
                     // Refrescar el origen de datos del control
-
-                    ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
-                    ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+                    ActualizarOrigenDatos();
                 }
                 else
                 {
@@ -139,12 +137,10 @@ namespace TiendaP.View
             }
 
             resultado = IProductRepository.Agregar(product);
-            
+
 
             // Refrescar el origen de datos del control
-
-            ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
-            ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+            ActualizarOrigenDatos();
         }
 
         private static T FindVisualChild<T>(DependencyObject parent, string childName) where T : DependencyObject
@@ -185,8 +181,14 @@ namespace TiendaP.View
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
-            ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
-            ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+            ActualizarOrigenDatos();
+        }
+
+        private void ActualizarOrigenDatos()
+        {
+            productosTienda = IProductRepository.ObtenerProductos();
+            ObservableCollection<Product> productosObservable = new ObservableCollection<Product>(productosTienda);
+            ProductosTienda.ItemsSource = productosObservable;
         }
     }
 }
