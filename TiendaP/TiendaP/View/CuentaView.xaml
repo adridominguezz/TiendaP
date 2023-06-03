@@ -14,46 +14,162 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="AÑADIR PRODUCTOS" TextAlignment="Left" Foreground="{StaticResource color8}"  
-                       Margin="5" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
-            <TextBlock.Effect>
-                <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
-            </TextBlock.Effect>
-        </TextBlock>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!-- TITULO AÑADIR PRODUCTOS -->
+            <TextBlock Grid.Column="0" Text="AÑADIR PRODUCTOS" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                           Margin="10" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <!-- TITULO EDITAR / ELIMINAR PRODUCTOS -->
+            <TextBlock Grid.Column="1" Text="EDITAR Y ELIMINAR PRODUCTOS" TextAlignment="Left" Foreground="{StaticResource color8}"  
+                           Margin="10" FontWeight="Bold" FontFamily="Montserrat Thin" FontSize="20" VerticalAlignment="Center">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="2" Opacity="0.5" BlurRadius="2"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            
+        </Grid>
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="280"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Nombre" TextAlignment="Left" Foreground="White"  Margin="5" />
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Marca" TextAlignment="Left" Foreground="White"  Margin="5" />
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Talla" TextAlignment="Left" Foreground="White"  Margin="5" />
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Url Imagen" TextAlignment="Left" Foreground="White"  Margin="5" />
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Precio" TextAlignment="Left" Foreground="White"  Margin="5"/>
 
 
-                <TextBox x:Name="txtNombre"  Grid.Row="0" Grid.Column="1" Margin="5"/>
-                <TextBox x:Name="txtTipo"  Grid.Row="1" Grid.Column="1" Margin="5"/>
-                <TextBox x:Name="txtTalla"  Grid.Row="2" Grid.Column="1" Margin="5"/>
-                <TextBox x:Name="txtImagenUrl"  Grid.Row="3" Grid.Column="1" Margin="5"/>
-                <TextBox x:Name="txtPrecio"  Grid.Row="4" Grid.Column="1" Margin="5"/>
-                <StackPanel Orientation="Vertical" 
-                Grid.Row="5" Grid.ColumnSpan="2" Margin="70,0,50,150">
+            <!-- PANEL AÑADIR PRODUCTOS-->
+            <Border Grid.Column="0" CornerRadius="10" Background="White" Opacity="0.9" Margin="5" Padding="10">
+                <StackPanel >
+                    
+                    <!--NOMBRE -->
+                    <TextBlock Text="Nombre" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="16" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10"/>
+
+                    <TextBox x:Name="txtNombre"
+                             FontSize="14"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             Margin="10,0,10,10"
+                             Padding="5"
+                             VerticalContentAlignment="Center"
+                             Background="Transparent">
+                    </TextBox>
+                    <!-- MARCA -->
+                    <TextBlock Text="Marca" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="16" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10"/>
+
+                    <TextBox x:Name="txtTipo"
+                             FontSize="14"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10,0,10,10"
+                             Padding="5"
+                             Background="Transparent">
+                    </TextBox>
+
+                    <!-- TALLA -->
+                    <TextBlock Text="Talla" 
+                                   Foreground="Black"
+                                   FontWeight="Medium"
+                                   FontSize="16" 
+                                   FontFamily="Montserrat Thin" 
+                                   TextAlignment="Left" 
+                                   Margin="10"/>
+
+                    <TextBox x:Name="txtTalla"
+                             FontSize="14"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10,0,10,10"
+                             Padding="5"
+                             Background="Transparent">
+                    </TextBox>
+                    <!-- URL IMAGEN -->
+                    <TextBlock Text="URL Imagen" 
+                               Foreground="Black"
+                               FontWeight="Medium"
+                               FontSize="16" 
+                               FontFamily="Montserrat Thin" 
+                               TextAlignment="Left" 
+                               Margin="10"/>
+
+                    <TextBox x:Name="txtImagenUrl"
+                             FontSize="14"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10,0,10,10"
+                             Padding="5"
+                             Background="Transparent">
+
+                    </TextBox>
+
+                    <!-- PRECIO -->
+                    <TextBlock Text="Precio" 
+                               Foreground="Black"
+                               FontWeight="Medium"
+                               FontSize="16" 
+                               FontFamily="Montserrat Thin" 
+                               TextAlignment="Left" 
+                               Margin="10"/>
+
+                    <TextBox x:Name="txtPrecio"
+                             FontSize="14"
+                             FontFamily="Montserrat Thin"                            
+                             Foreground="Black"
+                             CaretBrush="{StaticResource color1}"
+                             BorderBrush="{StaticResource color2}"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="10,0,10,10"
+                             Padding="5"
+                             Background="Transparent">
+
+                    </TextBox>
+
+                    <TextBlock x:Name="DatosGuardados"
+                               Foreground="Red"
+                               FontSize="12" FontFamily="Montserrat Thin" 
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center" 
+                               />
+
                     <Button x:Name="btnGuardar"
                             BorderThickness="0"
                             Content="Guardar producto"                         
@@ -66,7 +182,7 @@
                             Grid.Column="1"
                             VerticalAlignment="Top"
                             HorizontalAlignment="Center"
-                            Margin="10"
+                            Margin="5,20,5,5"
                             Click="btnGuardar_Click"
                             >
                         <Button.Style>
@@ -91,9 +207,12 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <TextBlock x:Name="DatosGuardados" Grid.Row="5" Grid.Column="1" Text="" Foreground="Red" TextAlignment="Center" Margin="10"  />
                 </StackPanel>
-            </Grid>
+            </Border>
+           
+
+
+            <!-- PANEL EDITAR Y BORRAR PRODUCTOS -->
             <Border Grid.Column="1" Background="White" Margin="5" BorderThickness="1" CornerRadius="5" Opacity="0.9">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -101,16 +220,16 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                    <Border Grid.Row="0" Background="#c3dcea"  CornerRadius="5,5,0,0">
                         <Grid >
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="15*"/>
-                                <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="10*"/>
-                                <ColumnDefinition Width="15*"/>
-                                <ColumnDefinition Width="8*"/>
-                                <ColumnDefinition Width="8*"/>
-                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Name="ColumnaNombre" Width="15*"/>
+                                <ColumnDefinition Name="ColumnaMarca" Width="9*"/>
+                                <ColumnDefinition Name="ColumnaTalla" Width="8*"/>
+                                <ColumnDefinition Name="ColumnaUrl" Width="15*"/>
+                                <ColumnDefinition Name="ColumnaPrecio" Width="8*"/>
+                                <ColumnDefinition Name="ColumnaEdit" Width="8*"/>
+                                <ColumnDefinition Name="ColumnaEliminar" Width="8*"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="Nombre" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock Grid.Column="1" Text="Marca" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -122,32 +241,32 @@
 
                         </Grid>
                     </Border>
+                    
+                    
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <ItemsControl Name="ProductosTienda" Loaded="ItemsControl_Loaded" ItemsSource="{Binding ProductosTienda}" Margin="5">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="15*"/>
-                                            <ColumnDefinition Width="10*"/>
-                                            <ColumnDefinition Width="10*"/>
-                                            <ColumnDefinition Width="15*"/>
-                                            <ColumnDefinition Width="8*"/>
-                                            <ColumnDefinition Width="8*"/>
-                                            <ColumnDefinition Width="8*"/>
+                                            <ColumnDefinition Name="ColumnaBinNombre" Width="15*"/>
+                                            <ColumnDefinition Name="ColumnaBinMarca" Width="9*"/>
+                                            <ColumnDefinition Name="ColumnaBinTalla" Width="8*"/>
+                                            <ColumnDefinition Name="ColumnaBinUrl" Width="15*"/>
+                                            <ColumnDefinition Name="ColumnaBinPrecio" Width="8*"/>
+                                            <ColumnDefinition Name="ColumnaBinEdit" Width="8*"/>
+                                            <ColumnDefinition Name="ColumnaBinEliminar" Width="8*"/>
                                         </Grid.ColumnDefinitions>
                                         <TextBox x:Name="CambioNombre" Grid.Column="0" Text="{Binding Nombre}" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" BorderBrush="Transparent"/>
                                         <TextBox x:Name="CambioMarca" Grid.Column="1" Text="{Binding Tipo}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,10,10,10" BorderBrush="Transparent"/>
-                                        <TextBox x:Name="CambioTalla" Grid.Column="2" Text="{Binding Talla}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" BorderBrush="Transparent"/>
+                                        <TextBox x:Name="CambioTalla" Grid.Column="2" Text="{Binding Talla}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15,10,10,10" BorderBrush="Transparent"/>
                                         <TextBox x:Name="CambioImagen" Grid.Column="3" Text="{Binding ImagenURl}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" BorderBrush="Transparent"/>
                                         <StackPanel Orientation="Horizontal" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
                                             <TextBox x:Name="CambioPrecio" Foreground="Blue"  FontSize="12" Text="{Binding Precio}" BorderBrush="Transparent"/>
                                             <TextBlock Foreground="Blue"  FontSize="12" Text="€" />
                                          </StackPanel>
-                                        <!--<TextBlock  Grid.Column="4" Foreground="Blue"  FontSize="15"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
-                                                    <Run Text=""/>
-                                                    <Run Text="€"/>
-                                    </TextBlock>-->
+                                        
+                                        <!-- BOTON EDITAR PRODUCTO -->
                                         <Button x:Name="btnEditProduct"
                                             Click="btnEditProduct_Click"
                                             Grid.Column="5"
@@ -183,6 +302,7 @@
                                                 </Grid>
                                             </Button.Content>
                                         </Button>
+                                        <!-- BOTON ELIMINAR PRODUCTO -->
                                         <Button x:Name="btnSuprProduct"
                                             Click="btnSuprProduct_Click"
                                             Grid.Column="6"
@@ -191,7 +311,7 @@
                                             Background="Red" 
                                             BorderBrush="Transparent" 
                                             Cursor="Hand"
-                                            HorizontalAlignment="Center" Margin="10"
+                                            HorizontalAlignment="Center" Margin="15,10,10,10"
                                             >
                                         <Button.Style>
                                             <Style TargetType="Button">

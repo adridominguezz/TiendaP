@@ -33,7 +33,7 @@ namespace TiendaP.View
             InitializeComponent();
 
             
-            ActualizarOrigenDatos();
+            ActualizarOrigenDatos(); //He creado un metodo para acceder a la lista para poder actulizar la lista de productos tras cada acción que se produzca.
 
             DataContext = this;
 
@@ -45,6 +45,7 @@ namespace TiendaP.View
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            //Creo un producto y asigno los elementos que estan en los cuadros de texto para crear un producto en la base de datos.
             Product product = new Product();
             product.Nombre = txtNombre.Text;
             product.Tipo = txtTipo.Text;
@@ -57,6 +58,7 @@ namespace TiendaP.View
             {
                 product.Precio = float.Parse(txtPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
 
+                //LLamo al metodo de agregar producto de la clase IProductRepository. Devuelve 1 si se ha guardado o 0 si no.
                 int resultado = IProductRepository.Agregar(product);
 
 
@@ -121,6 +123,8 @@ namespace TiendaP.View
             // Eliminar el producto de la base de datos
             int resultado = IProductRepository.Eliminar(product);
 
+            //Recojo los datos que están actualmente en los TextBox, si han sido editados se cambiarán.
+
             TextBox cambioNombre = FindVisualChild<TextBox>(btn, "CambioNombre");
             TextBox cambioMarca = FindVisualChild<TextBox>(btn, "CambioMarca");
             TextBox cambioTalla = FindVisualChild<TextBox>(btn, "CambioTalla");
@@ -136,6 +140,7 @@ namespace TiendaP.View
                 product.Precio = float.Parse(cambioPrecio.Text, CultureInfo.GetCultureInfo("en-US"));
             }
 
+            //Creo un nuevo producto con los datos nuevos
             resultado = IProductRepository.Agregar(product);
 
 

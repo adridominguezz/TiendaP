@@ -54,7 +54,7 @@ namespace TiendaP.Models
                         Product product = new Product();
                         product.Id = reader.GetInt32(0);
                         product.Nombre = (reader.GetString(1)).ToUpper(); 
-                        product.Tipo = reader.GetString(2);
+                        product.Tipo = (reader.GetString(2)).ToUpper();
                         TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
                         product.Tipo = textInfo.ToTitleCase(product.Tipo.ToLower());
                         product.Talla = reader.GetString(3);

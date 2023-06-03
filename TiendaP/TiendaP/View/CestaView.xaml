@@ -36,7 +36,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                    <Border Grid.Row="0" Background="#c3dcea"  CornerRadius="5,5,0,0">
                         <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="120"/>
@@ -179,7 +179,7 @@
                             <RowDefinition Height="50"/>
                         </Grid.RowDefinitions>
                         <!-- TITULO DEL CUADRADO -->
-                        <Border Grid.Row="0" Background="LightGray"  CornerRadius="5,5,0,0">
+                        <Border Grid.Row="0" Background="#c3dcea"  CornerRadius="5,5,0,0">
                             <TextBlock Grid.Column="0" Text="PEDIDO" FontSize="20" FontWeight="Bold" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                         <!-- CONTENIDO CON LOS DETALLES ECONOMICOS-->
