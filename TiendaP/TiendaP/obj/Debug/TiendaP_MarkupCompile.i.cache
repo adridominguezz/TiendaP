@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\
+C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\
 TiendaP
 none
 false
 DEBUG;TRACE
-C:\Users\Adri\Documents\GitHub\TiendaP\TiendaP\TiendaP\App.xaml
-131077487110
+C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\App.xaml
+14-114564987
 
-35-1783700981
-171866870088
-CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\ProductStyle.xaml;Styles\UIColors.xaml;View\CestaView.xaml;View\ContactoView.xaml;View\CuentaView.xaml;View\FAQView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;View\NewUserView.xaml;
+39-1480267667
+17-156964347
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\ProductStyle.xaml;Styles\UIColors.xaml;View\CestaView.xaml;View\ComprasView.xaml;View\ContactoView.xaml;View\CuentaView.xaml;View\FAQView.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView.xaml;View\NewUserView.xaml;
 
-True
+False
 
