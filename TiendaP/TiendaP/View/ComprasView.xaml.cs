@@ -27,8 +27,7 @@ namespace TiendaP.View
             compras = IComprasRepository.ObtenerCompras();
 
 
-            Console.WriteLine(compras[0].ToString());
-            //ListaCompras.ItemsSource = compras;
+            ListaCompras.ItemsSource = compras;
 
             DataContext = this;
         }
