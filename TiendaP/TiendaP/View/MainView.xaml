@@ -34,6 +34,12 @@
         <DataTemplate  DataType="{x:Type viewModel:ContactoViewModel}">
             <local:ContactoView/>
         </DataTemplate>
+<<<<<<< Updated upstream
+=======
+        <DataTemplate DataType="{x:Type viewModel:ComprasViewModel}">
+            <local:ComprasView/>
+        </DataTemplate>
+>>>>>>> Stashed changes
 
     </Window.Resources>
 
