@@ -27,14 +27,7 @@ namespace TiendaP.Models
         }
 
 
-        public override string ToString()
-        {
-            return $"Nombre: {Nombre}\n" +
-                   $"Marca: {Tipo}\n" +
-                   $"Talla: {Talla}\n" +
-                   $"ImagenURL: {ImagenURl}\n" +
-                   $"Precio: {Precio}";
-        }
+        
 
     }
 }
