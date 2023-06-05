@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using TiendaP.Models;
 using TiendaP.Repositories;
+using TiendaP.View;
 
 namespace TiendaP.ViewModels
 {
@@ -71,6 +72,7 @@ namespace TiendaP.ViewModels
         public ICommand ShowCuentaViewCommand { get; }
         public ICommand ShowFAQViewCommand { get; }
         public ICommand ShowContactoViewCommand { get; }
+        public ICommand ShowComprasViewCommand { get; }
 
         public MainViewModel()
         {
@@ -83,6 +85,7 @@ namespace TiendaP.ViewModels
             ShowCuentaViewCommand = new ViewModelCommand(ExecuteShowCuentaViewCommand);
             ShowFAQViewCommand = new ViewModelCommand(ExecuteShowFAQViewCommand);
             ShowContactoViewCommand = new ViewModelCommand(ExecuteShowContactoViewCommand);
+            ShowComprasViewCommand = new ViewModelCommand(ExecuteShowComprasViewCommand);
 
 
             //Vista predeterminada
@@ -94,6 +97,11 @@ namespace TiendaP.ViewModels
         public bool IsAdmin
         {
             get { return _currentUserAccount.Tipo == "admin"; }
+        }
+
+        public bool IsAdminOrDepen
+        {
+            get { return (_currentUserAccount.Tipo == "admin" || _currentUserAccount.Tipo == "Depen"); }
         }
 
 
@@ -132,6 +140,12 @@ namespace TiendaP.ViewModels
             Caption = "Tienda";
             Icon = IconChar.Home;
         }
+        private void ExecuteShowComprasViewCommand(object obj)
+        {
+            CurrentChildView = new ComprasViewModel();
+            Caption = "Compras";
+            Icon = IconChar.ShopSlash;
+        }
 
         private void LoadCurrentUserData()
         {
@@ -157,6 +171,10 @@ namespace TiendaP.ViewModels
         public Visibility IsAdminVisibility
         {
             get { return IsAdmin ? Visibility.Visible : Visibility.Collapsed; }
+        }
+        public Visibility IsAdminOrDepenVisibility
+        {
+            get { return IsAdminOrDepen ? Visibility.Visible : Visibility.Collapsed; }
         }
     }
 }

@@ -288,3 +288,5 @@ C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.csproj
 C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.csproj.CopyComplete
 C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.exe
 C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\TiendaP.pdb
+C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\ComprasView.g.cs
+C:\Users\domin\Documents\GitHub\TiendaP\TiendaP\TiendaP\obj\Debug\View\ComprasView.baml

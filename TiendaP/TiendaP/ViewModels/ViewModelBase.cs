@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-
+using TiendaP.View;
 
 namespace TiendaP.ViewModels
 {
@@ -15,6 +15,11 @@ namespace TiendaP.ViewModels
         public void OnPropertyChanged (string propertyName)
         {
             PropertyChanged?.Invoke (this, new PropertyChangedEventArgs (propertyName));
+        }
+
+        public static implicit operator ViewModelBase(ComprasView v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

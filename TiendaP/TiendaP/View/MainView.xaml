@@ -34,6 +34,9 @@
         <DataTemplate  DataType="{x:Type viewModel:ContactoViewModel}">
             <local:ContactoView/>
         </DataTemplate>
+        <DataTemplate  DataType="{x:Type viewModel:ComprasViewModel}">
+            <local:ComprasView/>
+        </DataTemplate>
 
     </Window.Resources>
 
@@ -116,6 +119,15 @@
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="ShopLock" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="PRODUCTOS" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton x:Name="btnCompras" Visibility="{Binding IsAdminOrDepenVisibility}" Style="{StaticResource menuButton}"
+                             Tag="{StaticResource color3}"
+                             Command="{Binding ShowComprasViewCommand}"
+                             Cursor="Hand">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ShopLock" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="COMPRAS" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
 

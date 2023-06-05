@@ -71,6 +71,8 @@
     <Compile Include="CustomControls\BindablePasswordBox.xaml.cs">
       <DependentUpon>BindablePasswordBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Compras.cs" />
+    <Compile Include="Models\IComprasRepository.cs" />
     <Compile Include="Models\INewUserRepository.cs" />
     <Compile Include="Models\IProductRepository.cs" />
     <Compile Include="Models\IUserRepository.cs" />
@@ -82,6 +84,7 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ViewModels\CestaViewModel.cs" />
+    <Compile Include="ViewModels\ComprasViewModel.cs" />
     <Compile Include="ViewModels\ContactoViewModel.cs" />
     <Compile Include="ViewModels\CuentaViewModel.cs" />
     <Compile Include="ViewModels\FAQViewModel.cs" />
@@ -93,6 +96,9 @@
     <Compile Include="ViewModels\ViewModelCommand.cs" />
     <Compile Include="View\CestaView.xaml.cs">
       <DependentUpon>CestaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ComprasView.xaml.cs">
+      <DependentUpon>ComprasView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ContactoView.xaml.cs">
       <DependentUpon>ContactoView.xaml</DependentUpon>
@@ -144,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CestaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ComprasView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
