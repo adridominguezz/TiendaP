@@ -27,17 +27,11 @@
                             <ColumnDefinition Name="ColumnaMarca" Width="9*"/>
                             <ColumnDefinition Name="ColumnaTalla" Width="8*"/>
                             <ColumnDefinition Name="ColumnaUrl" Width="15*"/>
-                            <ColumnDefinition Name="ColumnaPrecio" Width="8*"/>
-                            <ColumnDefinition Name="ColumnaEdit" Width="8*"/>
-                            <ColumnDefinition Name="ColumnaEliminar" Width="8*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Text="Nombre" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="1" Text="Marca" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="2" Text="Talla" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         <TextBlock Grid.Column="3" Text="Url Imagen" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="4" Text="Precio" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="5" Text="Editar" FontSize="12" FontWeight="Bold" Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="6" Text="Eliminar" FontSize="12" FontWeight="Bold" Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"/>
 
                     </Grid>
                 </Border>
@@ -53,9 +47,6 @@
                                         <ColumnDefinition Name="ColumnaBinMarca" Width="9*"/>
                                         <ColumnDefinition Name="ColumnaBinTalla" Width="8*"/>
                                         <ColumnDefinition Name="ColumnaBinUrl" Width="15*"/>
-                                        <ColumnDefinition Name="ColumnaBinPrecio" Width="8*"/>
-                                        <ColumnDefinition Name="ColumnaBinEdit" Width="8*"/>
-                                        <ColumnDefinition Name="ColumnaBinEliminar" Width="8*"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock x:Name="CambioNombre" Grid.Column="0" Text="{Binding IdCompra }" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" />
                                     <TextBlock x:Name="CambioMarca" Grid.Column="1" Text="{Binding IdCliente}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,10,10,10"/>
