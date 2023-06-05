@@ -34,6 +34,9 @@
         <DataTemplate  DataType="{x:Type viewModel:ContactoViewModel}">
             <local:ContactoView/>
         </DataTemplate>
+        <DataTemplate  DataType="{x:Type viewModel:ComprasViewModel}">
+            <local:ContactoView/>
+        </DataTemplate>
 
     </Window.Resources>
 
