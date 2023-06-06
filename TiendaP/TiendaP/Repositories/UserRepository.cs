@@ -96,5 +96,32 @@ namespace TiendaP.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public string GetNameAndLastNameById(string id)
+        {
+            string nameAndLastName = null;
+            using (var connection = GetConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "SELECT Name, LastName FROM [User] WHERE Id = @id";
+                command.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+
+                using (var reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string name = reader["Name"].ToString();
+                        string lastName = reader["LastName"].ToString();
+                        nameAndLastName = $"{name} {lastName}";
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return nameAndLastName;
+        }
     }
 }

@@ -23,15 +23,15 @@
                 <Border Grid.Row="0" Background="#c3dcea"  CornerRadius="5,5,0,0">
                     <Grid >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Name="ColumnaNombre" Width="15*"/>
-                            <ColumnDefinition Name="ColumnaMarca" Width="9*"/>
-                            <ColumnDefinition Name="ColumnaTalla" Width="8*"/>
-                            <ColumnDefinition Name="ColumnaUrl" Width="15*"/>
+                            <ColumnDefinition Name="ColumnaIdCompra" Width="5*"/>
+                            <ColumnDefinition Name="ColumnaMarca" Width="10*"/>
+                            <ColumnDefinition Name="ColumnaTalla" Width="6*"/>
+                            <ColumnDefinition Name="ColumnaUrl" Width="5*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Nombre" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="1" Text="Marca" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="2" Text="Talla" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Column="3" Text="Url Imagen" FontSize="12" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Column="0" Text="ID COMPRA" FontSize="14" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" Text="NOMBRE CLIENTE" FontSize="14" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" Text="CANTIDAD PRODUCTOS" FontSize="14" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Column="3" Text="TOTAL PEDIDO" FontSize="14" FontWeight="Bold" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                     </Grid>
                 </Border>
@@ -43,17 +43,17 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Name="ColumnaBinNombre" Width="15*"/>
-                                        <ColumnDefinition Name="ColumnaBinMarca" Width="9*"/>
-                                        <ColumnDefinition Name="ColumnaBinTalla" Width="8*"/>
-                                        <ColumnDefinition Name="ColumnaBinUrl" Width="15*"/>
+                                        <ColumnDefinition Name="ColumnaCompraID" Width="5*"/>
+                                        <ColumnDefinition Name="ColumnaNombreCliente" Width="10*"/>
+                                        <ColumnDefinition Name="ColumnaCantProductos" Width="6*"/>
+                                        <ColumnDefinition Name="ColumnaPrecioCompra" Width="5*"/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock x:Name="CambioNombre" Grid.Column="0" Text="{Binding IdCompra }" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" />
-                                    <TextBlock x:Name="CambioMarca" Grid.Column="1" Text="{Binding IdCliente}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,10,10,10"/>
-                                    <TextBlock x:Name="CambioTalla" Grid.Column="2" Text="{Binding ProductosCompra}" FontSize="12"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15,10,10,10" />
-                                    <StackPanel Orientation="Horizontal" Grid.Column="4"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" >
-                                        <TextBlock x:Name="CambioPrecio" Foreground="Blue"  FontSize="12" Text="{Binding PrecioCompra}" />
-                                        <TextBlock Foreground="Blue"  FontSize="12" Text="€" />
+                                    <TextBlock x:Name="CompraID" Grid.Column="0" Text="{Binding IdCompra }" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
+                                    <TextBlock x:Name="NombreCliente" Grid.Column="1" Text="{Binding Nombre}" FontSize="14"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" />
+                                    <TextBlock x:Name="CantProductos" Grid.Column="2" Text="{Binding ProductosCompra}" FontSize="14"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"  />
+                                    <StackPanel Orientation="Horizontal" Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" >
+                                        <TextBlock x:Name="PrecioCompra" Foreground="Blue"  FontSize="14" Text="{Binding PrecioCompra}" />
+                                        <TextBlock Foreground="Blue"  FontSize="14" Text="€" />
                                     </StackPanel>
 
 

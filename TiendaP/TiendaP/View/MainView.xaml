@@ -126,7 +126,7 @@
                              Command="{Binding ShowComprasViewCommand}"
                              Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ShopLock" Style="{StaticResource menuButtonIcon}"/>
+                        <fa:IconImage Icon="CashRegister" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="COMPRAS" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>

@@ -93,6 +93,11 @@ namespace TiendaP.ViewModels
 
             LoadCurrentUserData();
         }
+        public string GetUserId()
+        {
+            var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+           return user.Id;
+        }
 
         public bool IsAdmin
         {
@@ -144,7 +149,7 @@ namespace TiendaP.ViewModels
         {
             CurrentChildView = new ComprasViewModel();
             Caption = "Compras";
-            Icon = IconChar.ShopSlash;
+            Icon = IconChar.CashRegister;
         }
 
         private void LoadCurrentUserData()
@@ -152,19 +157,12 @@ namespace TiendaP.ViewModels
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
             if (user != null)
             {
+                CurrentUserAccount.Id = user.Id;
                 CurrentUserAccount.Username = user.Username;
                 CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
-                CurrentUserAccount.ProfilePicture = null;
-                CurrentUserAccount.Tipo = user.Tipo; // Asegúrate de establecer la propiedad "Tipo" correctamente
-                OnPropertyChanged(nameof(IsAdmin)); // Notificar cambios en la propiedad IsAdmin
+                CurrentUserAccount.Tipo = user.Tipo; 
+                OnPropertyChanged(nameof(IsAdmin));
 
-                // Agregar línea de depuración
-                Console.WriteLine($"IsAdmin: {IsAdmin}");
-            }
-            else
-            {
-                CurrentUserAccount.DisplayName = "Invalid user, not logged in";
-                // Ocultar vistas secundarias.
             }
         }
 

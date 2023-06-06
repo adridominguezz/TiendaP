@@ -8,6 +8,7 @@ namespace TiendaP.Models
 {
     public class User
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -17,8 +18,9 @@ namespace TiendaP.Models
 
         public User() { }
 
-        public User(string name, string lastName, string email, string username, string password, string tipo)
+        public User(string id, string name, string lastName, string email, string username, string password, string tipo)
         {
+            Id = id;
             Name = name;
             LastName = lastName;
             Email = email;

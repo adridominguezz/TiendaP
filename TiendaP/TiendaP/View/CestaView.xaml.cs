@@ -119,14 +119,42 @@ namespace TiendaP.View
 
         private void btnConfirmarCompra_Click(object sender, RoutedEventArgs e)
         {
+            MainViewModel main = new MainViewModel();
+            Compras compra = new Compras();
+
+            compra.IdCliente = main.GetUserId();
+            compra.ProductosCompra = Carrito.Count;
+            
+            // Calcular el precio de compra
+            precioCompra = (float)Math.Round(precioCompra, 2);
+            precioCompra = 0;
+            foreach (Product p in Carrito)
+            {
+                precioCompra += p.Precio;
+            }
+            if (precioCompra < 100)
+            {
+               precioCompra += 4.95f;
+            }
+            compra.PrecioCompra = precioCompra;
+
+            int compraRealizada = IComprasRepository.Agregar(compra);
+            
+            if (compraRealizada > 0)
+            {
+                confirmarPedido.Text = "Pedido confirmado";
+            } else
+            {
+                confirmarPedido.Text = "Error en el pedido";
+            }
             Carrito.Clear();
-            confirmarPedido.Text = "Pedido confirmado";
             comprobarPrecio();
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(5);
             timer.Tick += Timer_Tick;
             timer.Start();
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)

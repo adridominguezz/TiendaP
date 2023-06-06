@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TiendaP.Repositories;
 
 namespace TiendaP.Models
 {
@@ -40,6 +41,7 @@ namespace TiendaP.Models
         public static List<Compras> ObtenerCompras()
         {
             List<Compras> Lista = new List<Compras>();
+            UserRepository userRepository = new UserRepository();
 
             using (SqlConnection conexion = ObtenerConexion())
             {
@@ -52,10 +54,10 @@ namespace TiendaP.Models
                 {
                     Compras compra = new Compras();
                     compra.IdCompra = reader.GetInt32(0);
-                    compra.IdCliente = reader.GetGuid(1).ToString();
+                    compra.Nombre = userRepository.GetNameAndLastNameById(reader.GetGuid(1).ToString());
                     compra.ProductosCompra = reader.GetInt32(2);
                     compra.PrecioCompra = Convert.ToSingle(reader.GetDouble(3));
-
+                    
                     Lista.Add(compra);
                 }
                 conexion.Close();
