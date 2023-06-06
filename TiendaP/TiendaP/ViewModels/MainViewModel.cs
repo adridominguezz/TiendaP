@@ -128,8 +128,8 @@ namespace TiendaP.ViewModels
         private void ExecuteShowCuentaViewCommand(object obj)
         {
             CurrentChildView = new CuentaViewModel();
-            Caption = "Cuenta";
-            Icon = IconChar.UserAlt;
+            Caption = "Productos";
+            Icon = IconChar.ShopLock;
         }
 
         private void ExecuteShowCestaViewCommand(object obj)

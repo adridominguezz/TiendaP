@@ -100,10 +100,7 @@ namespace TiendaP.View
                 // Eliminación exitosa, actualizar la lista de productos
                 productosTienda.Remove(product);
 
-                // Refrescar el origen de datos del control
-
-                ProductosTienda.ItemsSource = null;  // Limpia el origen de datos actual
-                ProductosTienda.ItemsSource = productosTienda; // Asigna la lista actualizada como nuevo origen de datos
+                ActualizarOrigenDatos();
             }
             else
             {
@@ -193,6 +190,7 @@ namespace TiendaP.View
         {
             productosTienda = IProductRepository.ObtenerProductos();
             ObservableCollection<Product> productosObservable = new ObservableCollection<Product>(productosTienda);
+            productosObservable = new ObservableCollection<Product>(productosObservable.OrderBy(p => p.Nombre));
             ProductosTienda.ItemsSource = productosObservable;
         }
     }
