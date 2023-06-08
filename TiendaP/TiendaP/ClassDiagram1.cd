@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TiendaP.Models.Compras">
+    <Position X="9.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAgEAAAAAAAAAAAAAABAAAEAA=</HashCode>
+      <FileName>Models\Compras.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.IComprasRepository">
+    <Position X="11" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IComprasRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.INewUserRepository">
+    <Position X="12.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\INewUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.IProductRepository">
+    <Position X="9.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAgQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.Product">
+    <Position X="11" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAAAAAAAAAAAAAAAgIAQAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.User">
+    <Position X="12.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAEAQAAAAQAAAAAAAACAAAAAAAAAAw=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.UserAccountModel">
+    <Position X="9.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEAAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAAAAAQ=</HashCode>
+      <FileName>Models\UserAccountModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Models.UserModel">
+    <Position X="11" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAQAAAAQAAAAAAAACAAAAAAAAAAw=</HashCode>
+      <FileName>Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.App">
+    <Position X="18" Y="4.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="10.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.CustomControls.BindablePasswordBox" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="4.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>CustomControls\BindablePasswordBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.Properties.Resources">
+    <Position X="18" Y="6.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Repositories.ProductRepository">
+    <Position X="16.5" Y="7.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Repositories.RepositoryBase">
+    <Position X="7.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAA=</HashCode>
+      <FileName>Repositories\RepositoryBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.Repositories.UserRepository">
+    <Position X="7.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAAAAAAAgBAACAAAACAACAAAAAAAAAIA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TiendaP.View.CestaView" BaseTypeListCollapsed="true">
+    <Position X="21" Y="4.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EABCAgAAAAAAABBAAAACgAAQAAAAAgCAAQAAAAgAAAA=</HashCode>
+      <FileName>View\CestaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.ComprasView" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="4.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>View\ComprasView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.ContactoView" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="8.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ContactoView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.CuentaView" BaseTypeListCollapsed="true">
+    <Position X="18" Y="9" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAQCAgAAAKAACAAAAAAAAAAAAgAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>View\CuentaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.FAQView" BaseTypeListCollapsed="true">
+    <Position X="19.5" Y="7.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\FAQView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.HomeView" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="9" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAACABAABAAAAAAAAAAAAEABAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\HomeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.LoginView" BaseTypeListCollapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAEAAAACAAAAAQAAAAQAAAQAEAAAAAAAA=</HashCode>
+      <FileName>View\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.MainView" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="6.75" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAEAAAACAAAAAQAAAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>View\MainView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.View.NewUserView" BaseTypeListCollapsed="true">
+    <Position X="22.5" Y="9.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAEEEAAAACAAAAAQAAAAQAAAAAEAAAAAAAA=</HashCode>
+      <FileName>View\NewUserView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TiendaP.ViewModels.CestaViewModel">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAgAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAgAAAQ=</HashCode>
+      <FileName>ViewModels\CestaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.ComprasViewModel">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ComprasViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.ContactoViewModel">
+    <Position X="19.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ContactoViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.CuentaViewModel">
+    <Position X="21.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\CuentaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.FAQViewModel">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\FAQViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.HomeViewModel">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAgAAAAAAAABAAAAAgAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\HomeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.LoginViewModel">
+    <Position X="11" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAghgAAAAAAQQAAAAAEgAAAAAACAgIAAICACAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.MainViewModel">
+    <Position X="14.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCIAAAABAgQAAAAkABCEAAAACAKAAQSMiAAGAIVAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.NewUserViewModel">
+    <Position X="18" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\NewUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiendaP.ViewModels.ViewModelBase">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TiendaP.ViewModels.ViewModelCommand" BaseTypeListCollapsed="true">
+    <Position X="21" Y="9.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAQAAEAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="TiendaP.Models.IUserRepository">
+    <Position X="7.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAAAAAAAgBAACAAAAAAACAAAAAAAAAIA=</HashCode>
+      <FileName>Models\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
